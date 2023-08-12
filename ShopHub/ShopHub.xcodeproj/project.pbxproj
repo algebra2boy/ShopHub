@@ -14,6 +14,7 @@
 		AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27C9E2A874D74009E7A80 /* ProductsView.swift */; };
 		AEB27CA12A874D86009E7A80 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA02A874D86009E7A80 /* CartView.swift */; };
 		AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA22A874D95009E7A80 /* UserView.swift */; };
+		AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA62A87505B009E7A80 /* MenuTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AEB27C9E2A874D74009E7A80 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		AEB27CA02A874D86009E7A80 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		AEB27CA22A874D95009E7A80 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		AEB27CA62A87505B009E7A80 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		AEB27CA52A874F83009E7A80 /* Menu Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				AEB27CA62A87505B009E7A80 /* MenuTabView.swift */,
 			);
 			path = "Menu Navigation";
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				AEB27CA12A874D86009E7A80 /* CartView.swift in Sources */,
 				AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */,
 				AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */,
+				AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
