@@ -23,13 +23,12 @@ struct ProductsView: View {
 }
 
 #Preview {
-    NavigationView {
-        TabView {
-            ProductsView()
-                .tabItem {
-                    Label("Product", systemImage: "bag")
-                }
-        }
+    TabView {
+        ProductsView()
+            .environmentObject(ShopHubViewModel())
+            .tabItem {
+                Label("Product", systemImage: "bag")
+            }
     }
 
 }

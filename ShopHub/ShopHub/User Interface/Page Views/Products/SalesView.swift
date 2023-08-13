@@ -9,32 +9,35 @@ import Foundation
 import SwiftUI
 
 struct SalesView: View {
-    let columns = [
-        GridItem(),
-        GridItem()
-    ]
-    let products: [Product] = Bundle.main.decode("ProductList.json")
+    
+    // Enviornment
+    
+    @EnvironmentObject var viewModel: ShopHubViewModel
+    
+    // internal
+    
+    let columns = [GridItem](repeating: GridItem(.flexible()), count: 2)
+    
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: columns) {
-                    ForEach(products) { product in
-                        NavigationLink {
-                            // View for Production Detail
-                            Text(product.name)
-                        } label: {
-                            ProductView(product: product)
-                        }
-                        .padding()
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(viewModel.products) { product in
+                    NavigationLink {
+                        // View for Production Detail
+                        Text(product.name)
+                    } label: {
+                        ProductView(product: product)
                     }
+                    .padding([.horizontal, .vertical], 20)
                 }
-                
             }
+            
         }
     }
 }
 
 #Preview {
     SalesView()
+        .environmentObject(ShopHubViewModel())
 }

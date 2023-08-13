@@ -10,6 +10,11 @@ import SwiftUI
 
 struct ProductView: View {
     let product: Product
+    
+    public init(product: Product) {
+        self.product = product
+    }
+    
     var body: some View {
         VStack(alignment: .center){
             ZStack(alignment: .topTrailing) {
@@ -19,7 +24,7 @@ struct ProductView: View {
                     .frame(width: 150, height: 100)
                     .padding()
                 
-                // Header
+                // MARK: Header
                 Text("\(product.type)")
                     .padding(7)
                     .background(Color.orange.opacity(0.7))
@@ -28,7 +33,7 @@ struct ProductView: View {
                     .cornerRadius(8)
             }
             
-            // Production name and price label
+            // MARK: Production name and price label
             VStack{
                 HStack {
                     Text(product.name)
@@ -54,3 +59,9 @@ struct ProductView: View {
         .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
+
+//#Preview {
+//    var products: [Product] = Bundle.main.decode("ProductList.json") as [Product]
+//    var product: Product = products[0]
+//    ProductView(product: product)
+//}
