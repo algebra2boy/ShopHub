@@ -61,9 +61,11 @@
 		AE2B3B772A871EAE00889805 /* ShopHub */ = {
 			isa = PBXGroup;
 			children = (
+				AEB27CAD2A886A2D009E7A80 /* Models */,
+				AEB27C982A874CBB009E7A80 /* User Interface */,
+				AEB27CAB2A886A02009E7A80 /* Extensions */,
 				AE2B3B782A871EAE00889805 /* ShopHubApp.swift */,
 				AE2B3B7A2A871EAE00889805 /* ContentView.swift */,
-				AEB27C982A874CBB009E7A80 /* User Interface */,
 				AE2B3B7C2A871EAF00889805 /* Assets.xcassets */,
 				AE2B3B7E2A871EAF00889805 /* Preview Content */,
 			);
@@ -144,6 +146,28 @@
 				AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */,
 			);
 			path = ToolbarView;
+			sourceTree = "<group>";
+		};
+		AEB27CAB2A886A02009E7A80 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEB27CAC2A886A17009E7A80 /* Swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEB27CAC2A886A17009E7A80 /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		AEB27CAD2A886A2D009E7A80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
