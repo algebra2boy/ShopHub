@@ -47,12 +47,12 @@ struct ProductView: View {
                 .frame(maxWidth: .infinity)
                 
                 Text(product.description ?? "N/A")
-                    .multilineTextAlignment(.leading) // make sure words are left alignment
+                    .multilineTextAlignment(.leading) // make sure words are left align
                     .lineLimit(2)
                     .truncationMode(.tail)
                     .font(.footnote)
-                    .fontWeight(.light)
-                    .foregroundStyle(Color.black.opacity(0.7))
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color.white.opacity(0.7))
                 
             }
             .frame(width: 150, height: 100)
@@ -90,5 +90,11 @@ struct ProductView: View {
 #Preview("Food") {
     let products: [Product] = Bundle.main.decode("ProductList.json")
     let product: Product = products[4]
+    return ProductView(product: product)
+}
+
+#Preview("Dumbell") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[5]
     return ProductView(product: product)
 }
