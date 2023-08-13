@@ -14,7 +14,7 @@ struct ProductsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Product")
+                SalesView()
             }
             .toolBarStyle(isLogoPressed: $isLogoPressed)
             .searchable(text: $searchText, prompt: "Search for products")
