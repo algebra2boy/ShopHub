@@ -15,6 +15,7 @@
 		AEB27CA12A874D86009E7A80 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA02A874D86009E7A80 /* CartView.swift */; };
 		AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA22A874D95009E7A80 /* UserView.swift */; };
 		AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA62A87505B009E7A80 /* MenuTabView.swift */; };
+		AEB27CAA2A8857E5009E7A80 /* ToolBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		AEB27CA02A874D86009E7A80 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		AEB27CA22A874D95009E7A80 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		AEB27CA62A87505B009E7A80 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
+		AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		AEB27CA42A874F00009E7A80 /* Accessory Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEB27CA82A885795009E7A80 /* ToolbarView */,
 			);
 			path = "Accessory Views";
 			sourceTree = "<group>";
@@ -133,6 +136,14 @@
 				AEB27CA62A87505B009E7A80 /* MenuTabView.swift */,
 			);
 			path = "Menu Navigation";
+			sourceTree = "<group>";
+		};
+		AEB27CA82A885795009E7A80 /* ToolbarView */ = {
+			isa = PBXGroup;
+			children = (
+				AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */,
+			);
+			path = ToolbarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			files = (
 				AE2B3B7B2A871EAE00889805 /* ContentView.swift in Sources */,
 				AE2B3B792A871EAE00889805 /* ShopHubApp.swift in Sources */,
+				AEB27CAA2A8857E5009E7A80 /* ToolBarStyle.swift in Sources */,
 				AEB27CA12A874D86009E7A80 /* CartView.swift in Sources */,
 				AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */,
 				AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */,
