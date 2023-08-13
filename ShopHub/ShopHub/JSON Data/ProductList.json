@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "name": "SteamDeck",
+        "price": 399.99,
+        "type": "Electronics",
+        "description": "A high-quality gadget.",
+        "image": "SteamDeck",
+    },
+    {
+        "id": 2,
+        "name": "Clothing1",
+        "price": 29.99,
+        "type": "Clothing",
+        "description": "Fashionable attire for any occasion.",
+        "image": "Clothing1",
+    },
+    {
+        "id": 3,
+        "name": "House1",
+        "price": 9.99,
+        "type": "House",
+        "description": "Elevate your living space with this item.",
+        "image": "House1",
+    },
+    {
+        "id": 4,
+        "name": "Art1",
+        "price": 49.99,
+        "type": "Art",
+        "description": "Enhance your beauty routine with this product.",
+        "image": "Art1",
+    },
+    {
+        "id": 5,
+        "name": "Food1",
+        "price": 14.99,
+        "type": "Food",
+        "description": "Delicious and nutritious snack.",
+        "image": "Food1",
+    },
+    {
+        "id": 6,
+        "name": "Fitness1",
+        "price": 39.99,
+        "type": "Fitness",
+        "description": "Stay fit with this workout equipment.",
+        "image": "Fitness1",
+    }
+]
+
