@@ -7,17 +7,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isLogoPressed = false
-    @State private var searchText = ""
-    
     var body: some View {
-        NavigationView {
-            TabView {
-                MenuTabView()
-            }
-            .tabViewStyle(DefaultTabViewStyle())
-            .toolBarStyle(isLogoPressed: $isLogoPressed)
+        TabView {
+            MenuTabView()
         }
+        .tabViewStyle(DefaultTabViewStyle())
     }
 }
 
