@@ -11,12 +11,9 @@ import SwiftUI
 struct ProductView: View {
     let product: Product
     
-    public init(product: Product) {
-        self.product = product
-    }
-    
     var body: some View {
         VStack(alignment: .center){
+            // put the type to the top right
             ZStack(alignment: .topTrailing) {
                 Image(product.image)
                     .resizable()
@@ -30,15 +27,18 @@ struct ProductView: View {
                     .background(Color.orange.opacity(0.7))
                     .foregroundColor(.white)
                     .font(.custom("header", size: 11))
-                    .cornerRadius(8)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             
-            // MARK: Production name and price label
-            VStack{
+            // MARK: Product name and price label
+            VStack(alignment: .leading) {
                 HStack {
                     Text(product.name)
                         .font(.subheadline)
                         .fontWeight(.bold)
+                    
+                    Spacer()
+                    
                     Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.subheadline)
                         .fontWeight(.semibold)
@@ -47,21 +47,48 @@ struct ProductView: View {
                 .frame(maxWidth: .infinity)
                 
                 Text(product.description ?? "N/A")
-                    .frame(width: 100, height: 30)
+                    .multilineTextAlignment(.leading) // make sure words are left alignment
+                    .lineLimit(2)
+                    .truncationMode(.tail)
+                    .font(.footnote)
                     .fontWeight(.light)
                     .foregroundStyle(Color.black.opacity(0.7))
-                    .font(.custom("", size: 11))
                 
             }
+            .frame(width: 150, height: 100)
         }
-        .fixedSize()
         .background(Color.bloodOrange.opacity(0.7))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 
-//#Preview {
-//    var products: [Product] = Bundle.main.decode("ProductList.json") as [Product]
-//    var product: Product = products[0]
-//    ProductView(product: product)
-//}
+#Preview("SteamDeck") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[0]
+    return ProductView(product: product)
+}
+
+#Preview("Clothing") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[1]
+    return ProductView(product: product)
+}
+
+#Preview("Pillow") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[2]
+    return ProductView(product: product)
+}
+
+#Preview("Art") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[3]
+    return ProductView(product: product)
+}
+
+
+#Preview("Food") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[4]
+    return ProductView(product: product)
+}

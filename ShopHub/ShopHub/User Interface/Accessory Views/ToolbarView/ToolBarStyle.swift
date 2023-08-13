@@ -24,7 +24,9 @@ struct ToolBarStyleModifier: ViewModifier {
                             .fontDesign(.monospaced)
                     }
                     .onTapGesture {
-                        isLogoPressed.toggle()
+                        withAnimation {
+                            isLogoPressed.toggle()
+                        }
                     }
                 }
             }

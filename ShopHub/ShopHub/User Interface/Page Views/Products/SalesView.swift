@@ -29,7 +29,6 @@ struct SalesView: View {
                     } label: {
                         ProductView(product: product)
                     }
-                    .padding([.horizontal, .vertical], 20)
                 }
             }
             

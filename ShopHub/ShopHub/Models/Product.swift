@@ -8,11 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct Product: Codable, Identifiable {
-    let id: Int
-    let name: String
-    let price: Double
-    let type: String
-    let description: String?
-    let image: String
+// a model that defines the Sale Product
+struct Product: Codable, Identifiable, Hashable {
+    var id: Int
+    var name: String
+    var price: Double
+    var type: String
+    var description: String?
+    var image: String
 }
