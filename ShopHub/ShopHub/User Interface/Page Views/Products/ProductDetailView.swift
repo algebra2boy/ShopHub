@@ -13,11 +13,12 @@ struct ProductDetailView: View {
     let product: Product
     
     // Internal
-    @State private var count = 0
+    @State private var quantity = 0
     
     var body: some View {
         NavigationStack {
             VStack {
+                // MARK: Top image
                 ZStack {
                     Image("\(product.image)")
                         .resizable(resizingMode: .stretch)
@@ -28,10 +29,13 @@ struct ProductDetailView: View {
                 
                 Divider()
                 
-                // name and type stack
+                // MARK: name and type stack
                 HStack {
 
-                    TypeTagView(productType: product.type, backgroundColor: .red, fontSize: 12)
+                    TypeTagView(productType: product.type, 
+                                backgroundColor: .red,
+                                fontSize: 12)
+                    
                     Spacer()
                     
                     Text(product.name)
@@ -41,26 +45,31 @@ struct ProductDetailView: View {
                 }
                 .padding()
                 
-                
+                // MARK: description
                 Text(product.description ?? "N/A")
+                    .multilineTextAlignment(.leading)
                     .font(.body)
                     .fontWeight(.light)
+                    .padding()
                 
+                // MARK: Price && quantity
                 HStack {
+                    
                     Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.system(size: 15))
                         .fontWeight(.heavy)
+                    
                     HStack {
                         Button {
-                            count -= 1
+                            quantity -= 1
                         } label: {
                             Image(systemName: "minus.square")
                         }
                         
-                        Text("\(count)")
+                        Text("\(quantity)")
                         
                         Button {
-                            count += 1
+                            quantity += 1
                         } label: {
                             Image(systemName: "plus.square")
                         }
