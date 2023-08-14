@@ -13,7 +13,15 @@ struct ProductDetailView: View {
     let product: Product
     
     // Internal
-    @State private var quantity = 0
+    @State private var quantity = 1
+    
+    // Calculate total price base on products' quantity
+    var totalPrice: Double {
+            let singlePrice = product.price
+            let quantities = Double(quantity)
+            let total = singlePrice * quantities
+            return total
+        }
     
     var body: some View {
         NavigationStack {
@@ -55,13 +63,19 @@ struct ProductDetailView: View {
                 // MARK: Price && quantity
                 HStack {
                     
-                    Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .font(.system(size: 15))
+                    Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .font(.system(size: 20))
                         .fontWeight(.heavy)
+                    
+                    Spacer()
                     
                     HStack {
                         Button {
-                            quantity -= 1
+                            if quantity > 0 {
+                                quantity -= 1
+                            } else {
+                                quantity = 0
+                            }
                         } label: {
                             Image(systemName: "minus.square")
                         }
@@ -74,10 +88,14 @@ struct ProductDetailView: View {
                             Image(systemName: "plus.square")
                         }
                     }
+                    .font(.system(size: 20))
+                    .fontWeight(.medium)
                 }
+                .padding()
                 
                 Button {
-                    
+                    // MARK: ShoppingCartView
+                    // TODO: adding total amount of product to cart
                 } label: {
                     Text("Add to cart")
                         .frame(maxWidth: .infinity)
