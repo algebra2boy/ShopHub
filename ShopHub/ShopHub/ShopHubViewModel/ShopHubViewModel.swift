@@ -42,6 +42,7 @@ extension Array where Element == Product {
         // return all element if it is empty
         filter {
             searchText.isEmpty ? true : $0.name.contains(searchText)
+            || $0.type.contains(searchText)
         }
     }
 }
