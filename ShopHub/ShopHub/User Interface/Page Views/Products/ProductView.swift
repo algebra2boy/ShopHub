@@ -24,7 +24,7 @@ struct ProductView: View {
                 // MARK: Header
                 Text("\(product.type)")
                     .padding(7)
-                    .background(Color.orange.opacity(0.7))
+                    .background(Color.pink.opacity(0.7))
                     .foregroundColor(.white)
                     .font(.custom("header", size: 11))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -32,18 +32,16 @@ struct ProductView: View {
             
             // MARK: Product name and price label
             VStack(alignment: .leading) {
-                HStack {
+                VStack {
                     Text(product.name)
                         .font(.subheadline)
                         .fontWeight(.bold)
-                    
-                    Spacer()
-                    
+                                        
                     Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 }
-                .foregroundColor(.black)
+                .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 
                 Text(product.description ?? "N/A")
@@ -57,7 +55,7 @@ struct ProductView: View {
             }
             .frame(width: 150, height: 100)
         }
-        .background(Color.bloodOrange.opacity(0.7))
+        .background(Color.darkBackground.opacity(0.7))
         .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }

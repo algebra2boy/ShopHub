@@ -21,6 +21,15 @@ struct SalesView: View {
     
     var body: some View {
         ScrollView {
+            HStack {
+                Text("Sales")
+                    .font(.system(size: 45))
+                    .padding(.horizontal, 20)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            .padding(-2)
+            
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.filteredProducts) { product in
                     NavigationLink {
@@ -31,7 +40,6 @@ struct SalesView: View {
                     }
                 }
             }
-            
         }
     }
 }
