@@ -22,7 +22,7 @@ struct SalesView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(viewModel.products) { product in
+                ForEach(viewModel.filteredProducts) { product in
                     NavigationLink {
                         // View for Production Detail
                         Text(product.name)

@@ -8,9 +8,40 @@
 import Foundation
 
 class ShopHubViewModel: ObservableObject {
-    @Published var products: [Product]
+    /// private storage to store all the products
+    private var allProducts: [Product]
+    
+    /// filtered products to be shown to the users. Filtered based on the search text.
+    @Published var filteredProducts: [Product]
+    
+    /// the search text to filter out the products
+    var searchText = ""
+    
     
     init() {
-        products = Bundle.main.decode("ProductList.json")
+        allProducts = Bundle.main.decode("ProductList.json")
+        filteredProducts = allProducts.filter(searchText: searchText)
+    }
+    
+    /// update and filter the search text
+    /// - Parameters searchText:  A `String` used to filter out the products
+    func update(searchText: String) {
+        self.searchText = searchText
+        filteredProducts = allProducts.filter(searchText: searchText)
+    }
+}
+
+// extension to handle the array filter logic
+extension Array where Element == Product {
+    
+    /// filter out the products based on the searchText.
+    /// choose the products whose name is contained the searchText.
+    /// - Parameters searchText:  A `String` used to filter out the products
+    /// - Returns: An array of `Products` that satisfied teh searching citeria
+    func filter(searchText: String) -> Self {
+        // return all element if it is empty
+        filter {
+            searchText.isEmpty ? true : $0.name.contains(searchText)
+        }
     }
 }
