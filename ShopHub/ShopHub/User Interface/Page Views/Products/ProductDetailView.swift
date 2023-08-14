@@ -15,6 +15,14 @@ struct ProductDetailView: View {
     // Internal
     @State private var count = 0
     
+    var totalPrice: Double {
+        let singlePrice = product.price
+        let count = Double(count)
+        let total = singlePrice * count
+        return total
+    }
+    
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -47,12 +55,19 @@ struct ProductDetailView: View {
                     .fontWeight(.light)
                 
                 HStack {
-                    Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .font(.system(size: 15))
+                    Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .font(.system(size: 18))
                         .fontWeight(.heavy)
+                    
+                    Spacer()
+                    
                     HStack {
                         Button {
-                            count -= 1
+                            if count > 0 {
+                                count -= 1
+                            } else {
+                                count = 0
+                            }
                         } label: {
                             Image(systemName: "minus.square")
                         }
@@ -60,15 +75,19 @@ struct ProductDetailView: View {
                         Text("\(count)")
                         
                         Button {
-                            count += 1
+                                count += 1
                         } label: {
                             Image(systemName: "plus.square")
                         }
                     }
+                    .font(.system(size: 18))
+                    .fontWeight(.medium)
                 }
+                .padding()
                 
                 Button {
-                    
+                    // MARK: ShoppingCartView
+                    // TODO: adding total amount of product to cart
                 } label: {
                     Text("Add to cart")
                         .frame(maxWidth: .infinity)
