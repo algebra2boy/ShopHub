@@ -19,7 +19,7 @@ struct ProductsView: View {
     @State private var searchText = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 SalesView()
             }
