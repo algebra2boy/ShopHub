@@ -22,12 +22,7 @@ struct ProductView: View {
                     .padding()
                 
                 // MARK: Header
-                Text("\(product.type)")
-                    .padding(7)
-                    .background(Color.pink.opacity(0.7))
-                    .foregroundColor(.white)
-                    .font(.custom("header", size: 11))
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                TypeTagView(productType: product.type)
             }
             
             // MARK: Product name and price label

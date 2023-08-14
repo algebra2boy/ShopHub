@@ -41,8 +41,8 @@ extension Array where Element == Product {
     func filter(searchText: String) -> Self {
         // return all element if it is empty
         filter {
-            searchText.isEmpty ? true : $0.name.contains(searchText)
-            || $0.type.contains(searchText)
+            searchText.isEmpty ? true : 
+            $0.name.contains(searchText) || $0.type.contains(searchText)
         }
     }
 }
