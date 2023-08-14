@@ -33,8 +33,7 @@ struct SalesView: View {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.filteredProducts) { product in
                     NavigationLink {
-                        // View for Production Detail
-                        Text(product.name)
+                        ProductDetailView(product: product)
                     } label: {
                         ProductView(product: product)
                     }
