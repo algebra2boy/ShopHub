@@ -19,27 +19,13 @@ struct BannerView: View {
             LazyHStack {
                 ForEach(products) {product in
                     BannerCardView(product: product)
+                        .containerRelativeFrame(.horizontal)
                 }
             }
-            .padding()
-            // Configures the lazyHStack as a scroll target layout.
             .scrollTargetLayout(isEnabled: true)
         }
-        // try .paging effect
-        .scrollTargetBehavior(.viewAligned(limitBehavior: .automatic))
-//        .scrollPosition(id: $itemPosition) // attach the item position automatically
-//        
-//        if let itemPosition {
-//            Text(itemPosition)
-//        }
-        // TODO: make dots effect to show which item is being displayed
-        /* Save for experiment
-        Button("Scroll To SteamDeck") {
-            // adding animiation would create a smooth scrolling effect
-            withAnimation {
-                itemPosition = "SteamDeck"
-            }
-        } */
+        .scrollTargetBehavior(.paging)
+        .safeAreaPadding(.horizontal, 20)
         .frame(height: 200)
         // TODO: (Optional) add Animation
     }
