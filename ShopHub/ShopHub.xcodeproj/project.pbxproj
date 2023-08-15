@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423216FD2A8BED3300B7A7F0 /* BannerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423216FC2A8BED3300B7A7F0 /* BannerCardView.swift */; };
 		4237B37D2A8AC17900C214AE /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237B37C2A8AC17900C214AE /* ProductDetailView.swift */; };
 		4237B3802A8AC5AD00C214AE /* TypeTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4237B37F2A8AC5AD00C214AE /* TypeTagView.swift */; };
 		4271EC842A88719C00E2C85B /* ProductList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4271EC832A88719C00E2C85B /* ProductList.json */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		423216FC2A8BED3300B7A7F0 /* BannerCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCardView.swift; sourceTree = "<group>"; };
 		4237B37C2A8AC17900C214AE /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		4237B37F2A8AC5AD00C214AE /* TypeTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeTagView.swift; sourceTree = "<group>"; };
 		4271EC832A88719C00E2C85B /* ProductList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductList.json; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				4271EC912A88753900E2C85B /* ProductView.swift */,
 				4237B37C2A8AC17900C214AE /* ProductDetailView.swift */,
 				AED85CD42A8B347B00E8B347 /* BannerView.swift */,
+				423216FC2A8BED3300B7A7F0 /* BannerCardView.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */,
 				4271EC892A8871BE00E2C85B /* Color-Theme.swift in Sources */,
 				AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */,
+				423216FD2A8BED3300B7A7F0 /* BannerCardView.swift in Sources */,
 				AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

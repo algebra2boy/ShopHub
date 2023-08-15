@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct BannerView: View {
-    
-    // the images to be displayed to user
-    let images: [String] = ["House1", "Art1", "Food1", "Fitness1", "SteamDeck", "Clothing1"]
+        
+    let products: [Product] = Bundle.main.decode("ProductList.json")
     
     @State private var itemPosition: String?
     
@@ -18,25 +17,21 @@ struct BannerView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack {
-                ForEach(images, id: \.self) { image in
-                    Image(image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 250, height: 150)
-                    // position size relative to the nearest container.
-                        .containerRelativeFrame(.horizontal)
+                ForEach(products) {product in
+                    BannerCardView(product: product)
                 }
             }
+            .padding()
             // Configures the lazyHStack as a scroll target layout.
             .scrollTargetLayout(isEnabled: true)
         }
         // try .paging effect
         .scrollTargetBehavior(.viewAligned(limitBehavior: .automatic))
-        .scrollPosition(id: $itemPosition) // attach the item position automatically
-        
-        if let itemPosition {
-            Text(itemPosition)
-        }
+//        .scrollPosition(id: $itemPosition) // attach the item position automatically
+//        
+//        if let itemPosition {
+//            Text(itemPosition)
+//        }
         // TODO: make dots effect to show which item is being displayed
         /* Save for experiment
         Button("Scroll To SteamDeck") {
@@ -45,9 +40,11 @@ struct BannerView: View {
                 itemPosition = "SteamDeck"
             }
         } */
+        .frame(height: 200)
+        // TODO: (Optional) add Animation
     }
 }
 
 #Preview {
-    BannerView()
+    return BannerView()
 }
