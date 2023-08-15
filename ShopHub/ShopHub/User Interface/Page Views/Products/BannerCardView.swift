@@ -14,7 +14,9 @@ struct BannerCardView: View {
         Image(product.image)
             .resizable()
             .scaledToFit()
+            .frame(height: 180)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .mask(RoundedRectangle(cornerRadius: 25))
             .shadow(radius: 5)
             .padding(.horizontal, 15)
             // when we scroll from one to the other
