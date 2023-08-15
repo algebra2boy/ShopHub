@@ -25,6 +25,7 @@
 		AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA22A874D95009E7A80 /* UserView.swift */; };
 		AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA62A87505B009E7A80 /* MenuTabView.swift */; };
 		AEB27CAA2A8857E5009E7A80 /* ToolBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */; };
+		AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED85CD42A8B347B00E8B347 /* BannerView.swift */; };
 		AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		AEB27CA22A874D95009E7A80 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		AEB27CA62A87505B009E7A80 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
 		AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarStyle.swift; sourceTree = "<group>"; };
+		AED85CD42A8B347B00E8B347 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHubViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +139,7 @@
 				4271EC8F2A88729C00E2C85B /* SalesView.swift */,
 				4271EC912A88753900E2C85B /* ProductView.swift */,
 				4237B37C2A8AC17900C214AE /* ProductDetailView.swift */,
+				AED85CD42A8B347B00E8B347 /* BannerView.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */,
 				AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */,
 				4271EC892A8871BE00E2C85B /* Color-Theme.swift in Sources */,
+				AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */,
 				AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

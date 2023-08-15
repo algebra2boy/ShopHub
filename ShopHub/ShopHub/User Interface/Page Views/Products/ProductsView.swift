@@ -20,7 +20,8 @@ struct ProductsView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
+                BannerView()
                 SalesView()
             }
             .toolBarStyle(isLogoPressed: $isLogoPressed)
