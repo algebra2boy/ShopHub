@@ -39,6 +39,7 @@ struct ProductView: View {
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity)
                 
+                // MARK: Product description
                 Text(product.description ?? "N/A")
                     .multilineTextAlignment(.leading) // make sure words are left align
                     .lineLimit(2)

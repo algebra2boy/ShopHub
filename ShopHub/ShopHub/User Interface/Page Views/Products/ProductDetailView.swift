@@ -17,11 +17,11 @@ struct ProductDetailView: View {
     
     // Calculate total price base on products' quantity
     var totalPrice: Double {
-            let singlePrice = product.price
-            let quantities = Double(quantity)
-            let total = singlePrice * quantities
-            return total
-        }
+        let singlePrice = product.price
+        let quantities = Double(quantity)
+        let total = singlePrice * quantities
+        return total
+    }
     
     var body: some View {
         NavigationStack {
@@ -71,14 +71,11 @@ struct ProductDetailView: View {
                     
                     HStack {
                         Button {
-                            if quantity > 0 {
-                                quantity -= 1
-                            } else {
-                                quantity = 0
-                            }
+                            quantity -= 1
                         } label: {
                             Image(systemName: "minus.square")
                         }
+                        .disabled(quantity == 0)
                         
                         Text("\(quantity)")
                         
@@ -109,7 +106,7 @@ struct ProductDetailView: View {
     }
 }
 
-#Preview("SteamDeck") {
+#Preview("Clothing") {
     let products: [Product] = Bundle.main.decode("ProductList.json")
     let product: Product = products[1]
     return ProductDetailView(product: product)
