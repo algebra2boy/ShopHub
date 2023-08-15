@@ -8,8 +8,8 @@
 import Foundation
 
 class ShopHubViewModel: ObservableObject {
-    /// private storage to store all the products
-    private var allProducts: [Product]
+    /// public storage to store all the products with only read access
+    public private(set) var allProducts: [Product]
     
     /// filtered products to be shown to the users. Filtered based on the search text.
     @Published var filteredProducts: [Product]
