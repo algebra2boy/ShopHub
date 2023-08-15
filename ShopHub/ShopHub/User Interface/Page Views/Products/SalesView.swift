@@ -40,6 +40,7 @@ struct SalesView: View {
                 }
             }
         }
+        .safeAreaPadding(.horizontal, 10)
     }
 }
 
