@@ -75,7 +75,7 @@ struct ProductDetailView: View {
                         } label: {
                             Image(systemName: "minus.square")
                         }
-                        .disabled(quantity == 0)
+                        .disabled(quantity == 1)
                         
                         Text("\(quantity)")
                         
