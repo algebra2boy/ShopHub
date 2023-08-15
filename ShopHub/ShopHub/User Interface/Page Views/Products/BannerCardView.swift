@@ -26,7 +26,8 @@ struct BannerCardView: View {
 //                Text(product.name)
 //                    .bold()
 //                    .foregroundStyle(.white)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 5)
             })
     }
 }
