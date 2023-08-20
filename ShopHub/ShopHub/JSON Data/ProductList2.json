@@ -1,0 +1,195 @@
+[
+    {
+        "id": 7,
+        "name": "Electronics2",
+        "price": 199.99,
+        "type": "Electronics",
+        "description": "A smaller and lighter version of the popular gadget.",
+        "image": "Electronics2"
+    },
+    {
+        "id": 8,
+        "name": "Clothing2",
+        "price": 39.99,
+        "type": "Clothing",
+        "description": "Comfortable and stylish clothing option.",
+        "image": "Clothing2"
+    },
+    {
+        "id": 9,
+        "name": "House2",
+        "price": 14.99,
+        "type": "House",
+        "description": "A decorative item to enhance your living space.",
+        "image": "House2"
+    },
+    {
+        "id": 10,
+        "name": "Art2",
+        "price": 79.99,
+        "type": "Art",
+        "description": "A unique art piece that sparks creativity.",
+        "image": "Art2"
+    },
+    {
+        "id": 11,
+        "name": "Food2",
+        "price": 19.99,
+        "type": "Food",
+        "description": "A delightful treat for your taste buds.",
+        "image": "Food2"
+    },
+    {
+        "id": 12,
+        "name": "Fitness2",
+        "price": 49.99,
+        "type": "Fitness",
+        "description": "An advanced workout equipment for serious athletes.",
+        "image": "Fitness2"
+    },
+    {
+        "id": 13,
+        "name": "Electronics3",
+        "price": 299.99,
+        "type": "Electronics",
+        "description": "Cutting-edge technology for the modern world.",
+        "image": "Electronics3"
+    },
+    {
+        "id": 14,
+        "name": "Clothing3",
+        "price": 49.99,
+        "type": "Clothing",
+        "description": "Elegant attire for special occasions.",
+        "image": "Clothing3"
+    },
+    {
+        "id": 15,
+        "name": "House3",
+        "price": 24.99,
+        "type": "House",
+        "description": "Practical and decorative household item.",
+        "image": "House3"
+    },
+    {
+        "id": 16,
+        "name": "Art3",
+        "price": 69.99,
+        "type": "Art",
+        "description": "Expressive art piece that evokes emotions.",
+        "image": "Art3"
+    },
+    {
+        "id": 17,
+        "name": "Food3",
+        "price": 12.99,
+        "type": "Food",
+        "description": "A quick and tasty snack for any time of day.",
+        "image": "Food3"
+    },
+    {
+        "id": 18,
+        "name": "Fitness3",
+        "price": 59.99,
+        "type": "Fitness",
+        "description": "Versatile equipment for full-body workouts.",
+        "image": "Fitness3"
+    },
+    {
+        "id": 19,
+        "name": "Electronics4",
+        "price": 159.99,
+        "type": "Electronics",
+        "description": "A budget-friendly tech gadget with great features.",
+        "image": "Electronics4"
+    },
+    {
+        "id": 20,
+        "name": "Clothing4",
+        "price": 29.99,
+        "type": "Clothing",
+        "description": "Casual and comfortable clothing for everyday wear.",
+        "image": "Clothing4"
+    },
+    {
+        "id": 21,
+        "name": "House4",
+        "price": 17.99,
+        "type": "House",
+        "description": "Functional household item with a touch of style.",
+        "image": "House4"
+    },
+    {
+        "id": 22,
+        "name": "Art4",
+        "price": 89.99,
+        "type": "Art",
+        "description": "A masterpiece that captures the essence of nature.",
+        "image": "Art4"
+    },
+    {
+        "id": 23,
+        "name": "Food4",
+        "price": 16.99,
+        "type": "Food",
+        "description": "Satisfy your cravings with this delicious option.",
+        "image": "Food4"
+    },
+    {
+        "id": 24,
+        "name": "Fitness4",
+        "price": 54.99,
+        "type": "Fitness",
+        "description": "Compact equipment for home workouts.",
+        "image": "Fitness4"
+    },
+    {
+        "id": 25,
+        "name": "Electronics5",
+        "price": 249.99,
+        "type": "Electronics",
+        "description": "An innovative gadget designed for productivity.",
+        "image": "Electronics5"
+    },
+    {
+        "id": 26,
+        "name": "Clothing5",
+        "price": 59.99,
+        "type": "Clothing",
+        "description": "Trendy clothing that stands out from the crowd.",
+        "image": "Clothing5"
+    },
+    {
+        "id": 27,
+        "name": "House5",
+        "price": 19.99,
+        "type": "House",
+        "description": "A decorative addition that brings charm to your space.",
+        "image": "House5"
+    },
+    {
+        "id": 28,
+        "name": "Art5",
+        "price": 99.99,
+        "type": "Art",
+        "description": "An abstract art piece that sparks imagination.",
+        "image": "Art5"
+    },
+    {
+        "id": 29,
+        "name": "Food5",
+        "price": 21.99,
+        "type": "Food",
+        "description": "A gourmet treat for food enthusiasts.",
+        "image": "Food5"
+    },
+    {
+        "id": 30,
+        "name": "Fitness5",
+        "price": 69.99,
+        "type": "Fitness",
+        "description": "Advanced equipment for targeted muscle workouts.",
+        "image": "Fitness5"
+    }
+]
+
