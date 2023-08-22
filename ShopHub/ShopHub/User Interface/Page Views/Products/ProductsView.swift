@@ -24,7 +24,7 @@ struct ProductsView: View {
                 BannerView()
                 SalesView()
             }
-            .toolBarStyle(isLogoPressed: $isLogoPressed)
+            .toolBarStyle(title: "ShopHub", titleImage: "basket.fill" , isLogoPressed: $isLogoPressed)
             // search bar
             .searchable(text: $searchText, prompt: "Search for products")
             // use the view model to filter out product (separate the view logic)

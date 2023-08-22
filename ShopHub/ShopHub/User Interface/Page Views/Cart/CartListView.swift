@@ -11,7 +11,7 @@ struct CartListView: View {
     let products: [Product]
     var body: some View {
         List {
-            ForEach(products) {product in
+            ForEach(products) { product in
                 Text(product.name)
             }
         }

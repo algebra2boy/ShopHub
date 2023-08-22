@@ -3,11 +3,12 @@
 //  ShopHub
 //
 //  Created by CHENGTAO on 8/20/23.
-//
+//  Source: https://www.youtube.com/watch?v=L_x5MkTrQ0o&t=1393s
+
 
 import SwiftUI
 
-class CartListViewModel: ObservableObject {
+class CartViewModel: ObservableObject {
     @Published var products: [Product] = []
     
     var sectionHeaders: [String] {
@@ -26,6 +27,11 @@ class CartListViewModel: ObservableObject {
     
     func sectionContent(_ type: String) -> [Product] {
         groupedProducts[type] ?? []
+    }
+    
+    public init(){
+          let products: [Product] = Bundle.main.decode("ProductList.json")
+          self.products = products
     }
     
 }

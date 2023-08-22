@@ -9,6 +9,8 @@ import SwiftUI
 
 /// a view modifier that is used for customize the top bar leading logo and brand name
 struct ToolBarStyleModifier: ViewModifier {
+    let title: String
+    let titleImage: String
     @Binding var isLogoPressed: Bool
     
     @ViewBuilder
@@ -17,10 +19,9 @@ struct ToolBarStyleModifier: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     HStack {
-                        Image(systemName: "basket.fill")
+                        Image(systemName: titleImage)
                             .symbolEffect(.bounce.up, value: isLogoPressed)
-                        Text("ShopHub")
-                            .font(.system(size: 25))
+                        Text(title)
                             .fontDesign(.monospaced)
                     }
                     .onTapGesture {
@@ -28,6 +29,8 @@ struct ToolBarStyleModifier: ViewModifier {
                             isLogoPressed.toggle()
                         }
                     }
+                    .font(.system(size: 25))
+
                 }
             }
     }
@@ -35,7 +38,7 @@ struct ToolBarStyleModifier: ViewModifier {
 
 extension View {
     @ViewBuilder
-    public func toolBarStyle(isLogoPressed: Binding<Bool>) -> some View {
-        self.modifier(ToolBarStyleModifier(isLogoPressed: isLogoPressed))
+    public func toolBarStyle(title: String, titleImage: String = "exclamationmark.circle.fill", isLogoPressed: Binding<Bool>) -> some View {
+        self.modifier(ToolBarStyleModifier(title: title, titleImage: titleImage, isLogoPressed: isLogoPressed))
     }
 }
