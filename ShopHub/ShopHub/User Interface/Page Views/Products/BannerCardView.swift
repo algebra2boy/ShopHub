@@ -22,10 +22,6 @@ struct BannerCardView: View {
             .padding(.horizontal, 15)
             .overlay(alignment: .bottomTrailing, content: {
                 TypeTagView(productType: product.name, backgroundColor: .greenCyan)
-                // MARK: Uncomment to use watermark style (You must need to comment line 24 before uncomment watermark style)
-//                Text(product.name)
-//                    .bold()
-//                    .foregroundStyle(.white)
                     .padding(.horizontal, 20)
                     .padding(.vertical, 5)
             })

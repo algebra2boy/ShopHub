@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    // Parameter
+    // Parameters
     let product: Product
     
-    // Internal
+    // Internal State
     @State private var quantity = 1
     
     // Calculate total price base on products' quantity

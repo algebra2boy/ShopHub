@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct TypeTagView: View {
-    // Parameter
+    
+    // Parameters
+    
     let productType: String
     let paddingValue: CGFloat
     let backgroundColor: Color

@@ -1,5 +1,5 @@
 //
-//  Bundle-Decodable.swift
+//  Bundle+Decode.swift
 //  ShopHub
 //
 //  Created by CHENGTAO on 8/12/23.
