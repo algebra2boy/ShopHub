@@ -28,6 +28,7 @@
 		AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA22A874D95009E7A80 /* UserView.swift */; };
 		AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA62A87505B009E7A80 /* MenuTabView.swift */; };
 		AEB27CAA2A8857E5009E7A80 /* ToolBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */; };
+		AEBD622F2A99A1E10014C335 /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBD622E2A99A1E10014C335 /* CartItemView.swift */; };
 		AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED85CD42A8B347B00E8B347 /* BannerView.swift */; };
 		AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		AEB27CA22A874D95009E7A80 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		AEB27CA62A87505B009E7A80 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
 		AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarStyle.swift; sourceTree = "<group>"; };
+		AEBD622E2A99A1E10014C335 /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
 		AED85CD42A8B347B00E8B347 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHubViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +167,7 @@
 			children = (
 				AEB27CA02A874D86009E7A80 /* CartView.swift */,
 				42F49D652A91CF12002C3C35 /* CartListView.swift */,
+				AEBD622E2A99A1E10014C335 /* CartItemView.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				4271EC892A8871BE00E2C85B /* Color-Theme.swift in Sources */,
 				42F49D682A91D38F002C3C35 /* CartViewModel.swift in Sources */,
 				AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */,
+				AEBD622F2A99A1E10014C335 /* CartItemView.swift in Sources */,
 				423216FD2A8BED3300B7A7F0 /* BannerCardView.swift in Sources */,
 				AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */,
 			);

@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct CartListView: View {
-    let products: [Product]
+    
+    @EnvironmentObject var cart: CartViewModel
+    
     var body: some View {
         List {
-            ForEach(products) { product in
-                Text(product.name)
+        
+            ForEach(cart.sectionHeaders, id: \.self) { type in
+                Section {
+                    ForEach(cart.sectionContent(type)) { product in
+                        CartItemView(product: product)
+                    }
+                    
+                } header: {
+                    Text(cart.sectionHeader(type))
+                        .font(.subheadline)
+                }
             }
         }
     }
 }
 
 #Preview {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    return CartListView(products: products)
+    CartListView()
+        .environmentObject(CartViewModel())
 }
