@@ -20,7 +20,7 @@ struct CartView: View {
                     ForEach(cart.sectionHeaders, id: \.self) { type in
                         Section(header: Text(cart.sectionHeader(type)).font(.subheadline)) {
                             ForEach(cart.sectionContent(type)) { product in
-                                CartProductView(product: product)
+                                ProductCardView(product: product)
                             }
                         }
                     }
@@ -37,11 +37,30 @@ struct CartView: View {
 }
 
 // TODO: Design UI
-struct CartProductView: View {
+struct ProductCardView: View {
     let product: Product
     var body: some View {
-        VStack {
-            Text(product.name)
+        HStack(alignment: .center, spacing: 10) {
+            Image(product.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .padding(10)
+            
+            VStack(alignment: .leading, spacing: 5) {
+                Text(product.name)
+                    .font(.headline)
+
+                Text(product.description ?? "N/A")
+                    .font(.subheadline)
+                    .lineLimit(2)
+            }
         }
     }
+}
+
+#Preview("Product Card") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+
+    return ProductCardView(product: products[1])
 }
