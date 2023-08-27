@@ -19,7 +19,6 @@ struct BannerView: View {
                     BannerCardView(product: product)
                 }
             }
-            // Configures the lazyHStack as a scroll target layout.
             .scrollTargetLayout(isEnabled: true)
         }
         .scrollTargetBehavior(.viewAligned(limitBehavior: .automatic))

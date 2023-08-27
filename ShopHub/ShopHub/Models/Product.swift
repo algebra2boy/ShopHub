@@ -10,6 +10,7 @@ import SwiftUI
 
 // a model that defines the Sale Product
 struct Product: Codable, Identifiable, Hashable {
+    
     // database required properties
     var id: Int
     var name: String
@@ -18,7 +19,4 @@ struct Product: Codable, Identifiable, Hashable {
     var description: String?
     var image: String
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
 }

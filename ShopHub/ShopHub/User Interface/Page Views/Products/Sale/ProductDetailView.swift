@@ -96,7 +96,7 @@ struct ProductDetailView: View {
                     // MARK: ShoppingCartView
                     // TODO: adding total amount of product to cart
                     
-                    shoppingCart.add(product)
+                    shoppingCart.add(product: product, count: quantity)
                     
                 } label: {
                     Text("Add to cart")

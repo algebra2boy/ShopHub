@@ -11,9 +11,10 @@ struct CartItemView: View {
     
     // Parameters
     let product: Product
+    let quantity: Int
     
     // Internal State
-    @State private var quantity = 1
+//    @State private var quantity = 1
     
     var body: some View {
         HStack(spacing: 20) {
@@ -42,16 +43,16 @@ struct CartItemView: View {
                     
                     HStack {
                         Button {
-                            quantity -= 1
+//                            quantity -= 1
                         } label: {
                             Image(systemName: "minus.square")
                         }
-                        .disabled(quantity == 1)
+//                        .disabled(quantity == 1)
                         
                         Text("\(quantity)")
                         
                         Button {
-                            quantity += 1
+//                            quantity += 1
                         } label: {
                             Image(systemName: "plus.square")
                         }
@@ -87,5 +88,5 @@ struct CartItemView: View {
 #Preview("Clothing view") {
     let products: [Product] = Bundle.main.decode("ProductList.json")
     let product: Product = products[1]
-    return CartItemView(product: product)
+    return CartItemView(product: product, quantity: 2)
 }
