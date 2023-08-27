@@ -15,6 +15,8 @@ struct ProductDetailView: View {
     // Internal State
     @State private var quantity = 1
     
+    @EnvironmentObject var shoppingCart: CartViewModel
+
     // Calculate total price base on products' quantity
     var totalPrice: Double {
         let singlePrice = product.price
@@ -93,6 +95,9 @@ struct ProductDetailView: View {
                 Button {
                     // MARK: ShoppingCartView
                     // TODO: adding total amount of product to cart
+                    
+                    shoppingCart.add(product)
+                    
                 } label: {
                     Text("Add to cart")
                         .frame(maxWidth: .infinity)

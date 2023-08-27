@@ -11,6 +11,10 @@ import SwiftUI
 class CartViewModel: ObservableObject {
     @Published var products: [Product] = []
     
+    // A set to track unique items
+    var uniqueItemsSet: Set<Product> = []
+
+    
     var sectionHeaders: [String] {
         return Array(Set(products.map {
             $0.type
@@ -29,9 +33,16 @@ class CartViewModel: ObservableObject {
         groupedProducts[type] ?? []
     }
     
-    public init(){
-          let products: [Product] = Bundle.main.decode("ProductList.json")
-          self.products = products
-    }
+//    public init(){
+//          let cartItems: [Product] = Bundle.main.decode("ProductList.json")
+//          self.products = cartItems
+//    }
     
+    func add(_ product: Product) {
+        if !uniqueItemsSet.contains(product) {
+            uniqueItemsSet.insert(product)
+            products.append(product)
+        }
+        print(uniqueItemsSet)
+    }
 }
