@@ -9,17 +9,16 @@ import SwiftUI
 
 struct CartItemView: View {
     
+    // Environment object
+    @EnvironmentObject var shoppingCart: CartViewModel
+    
     // Parameters
     let product: Product
     let quantity: Int
     
-    // Internal State
-//    @State private var quantity = 1
-    @EnvironmentObject var shoppingCart: CartViewModel
-    
     private var totalPrice: Double {
         let singlePrice = product.price
-        let quantities = Double((shoppingCart.getQuantity(product: product)))
+        let quantities = Double((shoppingCart.getQuantity(of: product)))
         let total = singlePrice * quantities
         return total
     }
@@ -46,31 +45,32 @@ struct CartItemView: View {
                 
                 HStack {
                     Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-//                        .foregroundColor(.accentColor)
+                        .foregroundColor(.accentColor)
                         .font(.system(size: 18))
                         .fontWeight(.heavy)
                     
                     Spacer()
                     
-                    HStack() {
+                    HStack {
                         Button {
                             shoppingCart.decrementQuantity(of: product)
-//                            print("Minus button pressed")
                         } label: {
                             Image(systemName: "minus.square")
                             
                         }
-                        Text("\(shoppingCart.getQuantity(product: product))")
+                        .disabled(shoppingCart.getQuantity(of: product) == 1)
+                        
+                        Text("\(shoppingCart.getQuantity(of: product))")
                         
                         Button {
                             shoppingCart.incrementQuantity(of: product)
-//                            print("Plus button pressed")
                             
                         } label: {
                             Image(systemName: "plus.square")
                         }
+                        .disabled(shoppingCart.getQuantity(of: product) == 999)
                     }
-                    .buttonStyle(BorderlessButtonStyle())
+                    .buttonStyle(.borderless)
                                                 
                 }
                 .padding()
@@ -99,8 +99,3 @@ struct CartItemView: View {
         .environmentObject(CartViewModel())
 }
 
-//#Preview("Clothing view") {
-//    let products: [Product] = Bundle.main.decode("ProductList.json")
-//    let product: Product = products[1]
-//    return CartItemView(product: product, quantity: 2)
-//}

@@ -31,7 +31,6 @@ class ShopHubViewModel: ObservableObject {
     }
 }
 
-// extension to handle the array filter logic
 extension Array where Element == Product {
     
     /// filter out the products based on the searchText.
@@ -39,7 +38,6 @@ extension Array where Element == Product {
     /// - Parameters searchText:  A `String` used to filter out the products
     /// - Returns: An array of `Products` that satisfied teh searching citeria
     func filter(searchText: String) -> Self {
-        // return all element if it is empty
         filter {
             searchText.isEmpty ? true : 
             $0.name.contains(searchText) || $0.type.contains(searchText)

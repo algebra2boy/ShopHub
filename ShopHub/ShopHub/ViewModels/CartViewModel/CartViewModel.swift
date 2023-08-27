@@ -36,13 +36,13 @@ class CartViewModel: ObservableObject, Cartable {
         let products: [Product] = Bundle.main.decode("ProductList.json")
         self.products = [products[1]: 4]
     }
-
+    
 }
 
 extension CartViewModel {
     
     // MARK: Add product to local shopping cart
-    func add(product: Product, count: Int) {
+    func add(product: Product, with count: Int) {
         if products.keys.contains(product) {
             products[product]! += count
         } else {
@@ -50,7 +50,8 @@ extension CartViewModel {
         }
     }
     
-    func getQuantity(product: Product) -> Int {
+    // MARK: Get and manipulate the quantity of product
+    func getQuantity(of product: Product) -> Int {
         products[product] ?? -1
     }
     
@@ -65,5 +66,10 @@ extension CartViewModel {
             products[product]! -= 1
         }
     }
-
+    
+    // MARK: Delete product from the local shopping cart
+    func delete(product: Product) {
+        products.removeValue(forKey: product)
+    }
 }
+

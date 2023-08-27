@@ -93,11 +93,7 @@ struct ProductDetailView: View {
                 .padding()
                 
                 Button {
-                    // MARK: ShoppingCartView
-                    // TODO: adding total amount of product to cart
-                    
-                    shoppingCart.add(product: product, count: quantity)
-                    
+                    shoppingCart.add(product: product, with: quantity)
                 } label: {
                     Text("Add to cart")
                         .frame(maxWidth: .infinity)
@@ -111,9 +107,9 @@ struct ProductDetailView: View {
     }
 }
 
-//#Preview("Clothing") {
-//    let products: [Product] = Bundle.main.decode("ProductList.json")
-//    let product: Product = products[1]
-//    return ProductDetailView(product: product)
-//}
-//
+#Preview("Clothing") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[1]
+    return ProductDetailView(product: product)
+}
+

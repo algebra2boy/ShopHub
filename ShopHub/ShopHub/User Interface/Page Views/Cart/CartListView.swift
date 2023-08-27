@@ -22,10 +22,7 @@ struct CartListView: View {
                         CartItemView(product: product,
                                      quantity: cart.products[product] ?? 0)
                     }
-//                    .onDelete(perform: { indexSet in
-//                        deleteItems(at: indexSet, for: type)
-//                    })
-                    
+        
                 } header: {
                     Text(cart.sectionHeader(type))
                         .font(.subheadline)
@@ -35,17 +32,9 @@ struct CartListView: View {
             
         }
     }
-    //func deleteItems(at offsets: IndexSet, for type: String) {
-    //        // Get the product to delete
-    //        let productToDelete = cart.sectionContent(type)[offsets.first!]
-    //
-    //        // Remove the product from the products array
-    //        if let index = cart.products.firstIndex(of: productToDelete) {
-    //            cart.products.remove(at: index)
-    //        }
-    //
-    //        // Remove the product from the uniqueItemsSet
-    //        cart.uniqueItemsSet.remove(productToDelete)
-    //}
+}
 
+#Preview {
+    CartListView()
+        .environmentObject(CartViewModel())
 }
