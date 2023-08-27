@@ -13,9 +13,11 @@ struct CartListView: View {
     
     var body: some View {
         List {
-        
+            
             ForEach(cart.sectionHeaders, id: \.self) { type in
+                
                 Section {
+                    
                     ForEach(cart.sectionContent(type)) { product in
                         CartItemView(product: product)
                     }
@@ -24,7 +26,9 @@ struct CartListView: View {
                     Text(cart.sectionHeader(type))
                         .font(.subheadline)
                 }
+                
             }
+            
         }
     }
 }
