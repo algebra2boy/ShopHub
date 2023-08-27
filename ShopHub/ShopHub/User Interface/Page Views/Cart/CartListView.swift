@@ -13,14 +13,6 @@ struct CartListView: View {
     
     var body: some View {
         List {
-<<<<<<< Updated upstream
-            
-=======
-<<<<<<< HEAD
-=======
-            
->>>>>>> 77e46ce2de0abee827a89d9caa2e61b9e5c0ccec
->>>>>>> Stashed changes
             ForEach(cart.sectionHeaders, id: \.self) { type in
                 
                 Section {
