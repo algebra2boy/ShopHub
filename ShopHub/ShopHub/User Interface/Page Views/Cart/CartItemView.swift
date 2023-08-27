@@ -15,6 +15,8 @@ struct CartItemView: View {
     
     // Internal State
 //    @State private var quantity = 1
+    @EnvironmentObject var shoppingCart: CartViewModel
+
     
     var body: some View {
         HStack(spacing: 20) {
@@ -37,29 +39,34 @@ struct CartItemView: View {
                 
                 HStack {
                     Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .foregroundColor(.accentColor)
+//                        .foregroundColor(.accentColor)
+                        .font(.system(size: 12))
+                        .fontWeight(.heavy)
                     
                     Spacer()
                     
-                    HStack {
+                    HStack() {
                         Button {
-//                            quantity -= 1
+                            shoppingCart.decrementQuantity(of: product)
+//                            print("Minus button pressed")
                         } label: {
                             Image(systemName: "minus.square")
+                            
                         }
-//                        .disabled(quantity == 1)
-                        
-                        Text("\(quantity)")
+                        Text("\(shoppingCart.getQuantity(product: product))")
                         
                         Button {
-//                            quantity += 1
+                            shoppingCart.incrementQuantity(of: product)
+//                            print("Plus button pressed")
+                            
                         } label: {
                             Image(systemName: "plus.square")
                         }
                     }
-                    .font(.system(size: 20))
-                    .fontWeight(.medium)
+                    .buttonStyle(BorderlessButtonStyle())
+                                                
                 }
+                .padding()
             }
         }
         .padding([.leading, .trailing, .top], 10)
@@ -85,8 +92,8 @@ struct CartItemView: View {
         .environmentObject(CartViewModel())
 }
 
-#Preview("Clothing view") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[1]
-    return CartItemView(product: product, quantity: 2)
-}
+//#Preview("Clothing view") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[1]
+//    return CartItemView(product: product, quantity: 2)
+//}

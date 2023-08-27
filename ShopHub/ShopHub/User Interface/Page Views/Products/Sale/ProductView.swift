@@ -56,39 +56,39 @@ struct ProductView: View {
     }
 }
 
-#Preview("SteamDeck") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[0]
-    return ProductView(product: product)
-}
-
-#Preview("Clothing") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[1]
-    return ProductView(product: product)
-}
-
-#Preview("Pillow") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[2]
-    return ProductView(product: product)
-}
-
-#Preview("Art") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[3]
-    return ProductView(product: product)
-}
-
-
-#Preview("Food") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[4]
-    return ProductView(product: product)
-}
-
-#Preview("Dumbell") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[5]
-    return ProductView(product: product)
-}
+//#Preview("SteamDeck") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[0]
+//    return ProductView(product: product)
+//}
+//
+//#Preview("Clothing") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[1]
+//    return ProductView(product: product)
+//}
+//
+//#Preview("Pillow") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[2]
+//    return ProductView(product: product)
+//}
+//
+//#Preview("Art") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[3]
+//    return ProductView(product: product)
+//}
+//
+//
+//#Preview("Food") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[4]
+//    return ProductView(product: product)
+//}
+//
+//#Preview("Dumbell") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[5]
+//    return ProductView(product: product)
+//}

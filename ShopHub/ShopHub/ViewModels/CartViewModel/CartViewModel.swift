@@ -31,6 +31,11 @@ class CartViewModel: ObservableObject, Cartable {
             .filter { $0.key.type == type }
             .keys)
     }
+    
+    init() {
+        let products: [Product] = Bundle.main.decode("ProductList.json")
+        self.products = [products[1]: 4]
+    }
 
 }
 
@@ -44,4 +49,21 @@ extension CartViewModel {
             products[product] = count
         }
     }
+    
+    func getQuantity(product: Product) -> Int {
+        products[product] ?? -1
+    }
+    
+    func incrementQuantity(of product: Product) {
+        if let currentQuantity = products[product], currentQuantity <= 999 {
+            products[product]! += 1
+        }
+    }
+    
+    func decrementQuantity(of product: Product) {
+        if let currentQuantity = products[product], currentQuantity > 0 {
+            products[product]! -= 1
+        }
+    }
+
 }
