@@ -16,6 +16,13 @@ struct CartItemView: View {
     // Internal State
 //    @State private var quantity = 1
     @EnvironmentObject var shoppingCart: CartViewModel
+    
+    private var totalPrice: Double {
+        let singlePrice = product.price
+        let quantities = Double((shoppingCart.getQuantity(product: product)))
+        let total = singlePrice * quantities
+        return total
+    }
 
     
     var body: some View {
@@ -38,9 +45,9 @@ struct CartItemView: View {
                     .truncationMode(.tail)
                 
                 HStack {
-                    Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
 //                        .foregroundColor(.accentColor)
-                        .font(.system(size: 12))
+                        .font(.system(size: 18))
                         .fontWeight(.heavy)
                     
                     Spacer()

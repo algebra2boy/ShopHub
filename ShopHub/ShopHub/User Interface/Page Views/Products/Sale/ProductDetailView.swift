@@ -18,7 +18,7 @@ struct ProductDetailView: View {
     @EnvironmentObject var shoppingCart: CartViewModel
 
     // Calculate total price base on products' quantity
-    var totalPrice: Double {
+    private var totalPrice: Double {
         let singlePrice = product.price
         let quantities = Double(quantity)
         let total = singlePrice * quantities
