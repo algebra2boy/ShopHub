@@ -11,44 +11,54 @@ struct CartListView: View {
     
     @EnvironmentObject var cart: CartViewModel
     
+    @State private var showSubmissionView: Bool = false
+    
     var body: some View {
-        List {
-            
-            ForEach(cart.sectionHeaders, id: \.self) { type in
+        ZStack {
+            List {
+                
+                ForEach(cart.sectionHeaders, id: \.self) { type in
+                    
+                    Section {
+                        
+                        ForEach(cart.sectionContent(type), id: \.self) { product in
+                            CartItemView(product: product,
+                                         quantity: cart.products[product] ?? 0)
+                        }
+                    } header: {
+                        Text(cart.sectionHeader(type))
+                            .font(.subheadline)
+                    }
+                    
+                }
                 
                 Section {
-                    
-                    ForEach(cart.sectionContent(type), id: \.self) { product in
-                        CartItemView(product: product,
-                                     quantity: cart.products[product] ?? 0)
-                    }
+                    CartTranscationView()
                 } header: {
-                    Text(cart.sectionHeader(type))
-                        .font(.subheadline)
+                    Text("Transacation")
                 }
                 
-            }
-            
-            Section {
-                CartTranscationView()
-            } header: {
-                Text("Transacation")
-            }
-            
-            
-            Section {
-                EmptyView()
-            } footer: {
-                Button {
-                    // TODO: Connect to db and show pop up
-                } label: {
-                    Text("Continue")
-                        .frame(maxWidth: .infinity)
+                
+                Section {
+                    EmptyView()
+                } footer: {
+                    Button {
+                        // TODO: Connect to db and show pop up
+                        showSubmissionView.toggle()
+                    } label: {
+                        Text("Continue")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.borderedProminent)
                 }
-                .buttonStyle(.borderedProminent)
+            }
+            .listStyle(.insetGrouped)
+            .blur(radius: showSubmissionView ? 15 : 0)
+            
+            if showSubmissionView {
+                CartSubmissionView(showSubmissionView: $showSubmissionView)
             }
         }
-        .listStyle(.insetGrouped)
         
     }
 }
