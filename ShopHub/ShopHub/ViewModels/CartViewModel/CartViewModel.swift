@@ -13,9 +13,7 @@ class CartViewModel: ObservableObject, Cartable {
     @Published var products: [Product: Int] = [:]
     
     var sectionHeaders: [String] {
-        products.keys
-            .map { $0.type }
-            .sorted(by: <)
+        Set(products.keys.map { $0.type }).sorted(by: <)
     }
     
     func sectionHeader(_ type: String) -> String {
