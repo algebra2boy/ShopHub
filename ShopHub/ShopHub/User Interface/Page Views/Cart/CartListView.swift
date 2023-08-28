@@ -25,6 +25,9 @@ struct CartListView: View {
                             CartItemView(product: product,
                                          quantity: cart.products[product] ?? 0)
                         }
+                        .onDelete(perform: { indexSet in
+                            deleteProducts(at: indexSet, for: type)
+                        })
                     } header: {
                         Text(cart.sectionHeader(type))
                             .font(.subheadline)
@@ -63,12 +66,22 @@ struct CartListView: View {
                 showSubmissionView.toggle()
             }
         }
-        
-        
     }
+    
 }
 
 #Preview {
     CartListView()
         .environmentObject(CartViewModel())
+}
+
+
+extension CartListView {
+    // MARK: To delete products from the section
+    func deleteProducts(at offsets: IndexSet, for type: String) {
+        let productsToDelete = offsets.map { cart.sectionContent(type)[$0] }
+        for product in productsToDelete {
+            cart.delete(product: product)
+        }
+    }
 }

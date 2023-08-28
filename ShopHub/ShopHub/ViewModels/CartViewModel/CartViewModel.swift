@@ -68,6 +68,7 @@ extension CartViewModel {
     // MARK: Delete product from the local shopping cart
     func delete(product: Product) {
         products.removeValue(forKey: product)
+        print(products)
     }
 }
 
