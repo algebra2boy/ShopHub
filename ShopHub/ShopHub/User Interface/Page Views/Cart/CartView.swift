@@ -24,8 +24,8 @@ struct CartView: View {
     }
 }
 
-#Preview {
-    CartView()
-        .environmentObject(CartViewModel())
-}
+//#Preview {
+//    CartView()
+//        .environmentObject(CartViewModel())
+//}
 

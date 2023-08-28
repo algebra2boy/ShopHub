@@ -87,18 +87,33 @@ class MockCartViewModel: ObservableObject {
 struct MockCartListView: View {
     
     @ObservedObject var cart: MockCartViewModel
+    // Internal State
+    @State private var searchText: String = ""
+    @State private var isLogoPressed = false
+
     
     var body: some View {
-        HStack {
-            List {
-                ForEach(cart.sectionHeaders, id: \.self) { type in
-                    Section(header: Text(type)) {
-                        ForEach(cart.sectionContent(for: type)) { product in
-                            ExtractedView(product: product, cart: cart)
+        NavigationStack {
+                HStack {
+                    ZStack {
+                        List {
+                            ForEach(cart.sectionHeaders, id: \.self) { type in
+//                                Section(header: Text(type)) 
+                                Section
+                                {
+                                    ForEach(cart.sectionContent(for: type)) { product in
+                                        ExtractedView(product: product, cart: cart)
+                                    }
+                                } header: {
+                                    Text("HHHHH")
+                                        .font(.subheadline)
+                                }
+                            }
                         }
                     }
                 }
-            }
+                .toolBarStyle(title: "Shopping Cart", titleImage: "cart.fill", isLogoPressed: $isLogoPressed)
+                .searchable(text: $searchText, prompt: "Search for your product in cart")
         }
     }
 }
