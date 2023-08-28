@@ -7,10 +7,12 @@
 
 
 import SwiftUI
+import Foundation
 
 class CartViewModel: ObservableObject, Cartable {
 
     @Published var products: [Product: Int] = [:]
+    
     
     var sectionHeaders: [String] {
         Set(products.keys.map { $0.type }).sorted(by: <)
@@ -30,10 +32,10 @@ class CartViewModel: ObservableObject, Cartable {
             .keys)
     }
     
-//    init() {
-//        let products: [Product] = Bundle.main.decode("ProductList.json")
-//        self.products = [products[1]: 4]
-//    }
+    init() {
+        let products: [Product] = Bundle.main.decode("ProductList.json")
+        self.products = [products[1]: 4]
+    }
     
 }
 
@@ -70,5 +72,6 @@ extension CartViewModel {
         products.removeValue(forKey: product)
         print(products)
     }
+
 }
 

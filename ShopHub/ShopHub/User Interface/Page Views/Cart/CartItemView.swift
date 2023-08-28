@@ -82,6 +82,7 @@ struct CartItemView: View {
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             Button(role: .destructive) {
                 // TODO: Delete item from the cart
+                shoppingCart.delete(product: product)
             } label: {
                 Label("delete", systemImage: "trash.fill")
             }

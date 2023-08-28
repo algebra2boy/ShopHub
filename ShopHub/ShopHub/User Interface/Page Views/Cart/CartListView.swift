@@ -12,7 +12,7 @@ struct CartListView: View {
     @EnvironmentObject var cart: CartViewModel
     
     @State private var showSubmissionView: Bool = false
-    
+        
     var body: some View {
         ZStack {
             List {
@@ -24,16 +24,13 @@ struct CartListView: View {
                         ForEach(cart.sectionContent(type), id: \.self) { product in
                             CartItemView(product: product,
                                          quantity: cart.products[product] ?? 0)
+                            
                         }
-                        .onDelete(perform: { indexSet in
-                            deleteProducts(at: indexSet, for: type)
-                        })
                     } header: {
                         Text(cart.sectionHeader(type))
                             .font(.subheadline)
                     }
                 }
-                
                 Section {
                     CartTranscationView()
                 } header: {
@@ -56,7 +53,7 @@ struct CartListView: View {
             }
             .listStyle(.insetGrouped)
             .blur(radius: showSubmissionView ? 8 : 0)
-            
+
             if showSubmissionView {
                 CartSubmissionView(showSubmission: $showSubmissionView)
             }
@@ -73,15 +70,4 @@ struct CartListView: View {
 #Preview {
     CartListView()
         .environmentObject(CartViewModel())
-}
-
-
-extension CartListView {
-    // MARK: To delete products from the section
-    func deleteProducts(at offsets: IndexSet, for type: String) {
-        let productsToDelete = offsets.map { cart.sectionContent(type)[$0] }
-        for product in productsToDelete {
-            cart.delete(product: product)
-        }
-    }
 }
