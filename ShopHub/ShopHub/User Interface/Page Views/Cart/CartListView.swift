@@ -29,7 +29,6 @@ struct CartListView: View {
                         Text(cart.sectionHeader(type))
                             .font(.subheadline)
                     }
-                    
                 }
                 
                 Section {
@@ -64,6 +63,7 @@ struct CartListView: View {
                 showSubmissionView.toggle()
             }
         }
+        
         
     }
 }

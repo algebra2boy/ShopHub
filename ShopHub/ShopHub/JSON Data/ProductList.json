@@ -46,6 +46,14 @@
         "type": "Fitness",
         "description": "Stay fit with this workout equipment.",
         "image": "Fitness1",
+    },
+    {
+        "id": 7,
+        "name": "Nintendo Switch™ with Neon Blue and Neon Red Joy‑Con™",
+        "price": 299.99,
+        "type": "Electronics",
+        "description": "Play at home or on the go with one system The Nintendo Switch™ system is designed to go wherever you do, instantly transforming from a home console you play on TV to a portable system you can play anywhere. So you get more time to play the games you love, however you like.",
+        "image": "NS",
     }
 ]
 

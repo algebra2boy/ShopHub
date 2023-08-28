@@ -32,10 +32,10 @@ class CartViewModel: ObservableObject, Cartable {
             .keys)
     }
     
-    init() {
-        let products: [Product] = Bundle.main.decode("ProductList.json")
-        self.products = [products[1]: 4]
-    }
+//    init() {
+//        let products: [Product] = Bundle.main.decode("ProductList.json")
+//        self.products = [products[1]: 4]
+//    }
     
 }
 
