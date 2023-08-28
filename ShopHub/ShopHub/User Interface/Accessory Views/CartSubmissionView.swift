@@ -9,7 +9,10 @@ import SwiftUI
 
 struct CartSubmissionView: View {
     
-    @Binding var showSubmissionView: Bool
+    /// show the submission view when `Continue` is pressed.
+    @Binding var showSubmission: Bool
+    
+    // Internal State
     @State private var isAnimating: Bool = false
     
     var body: some View {
@@ -20,9 +23,9 @@ struct CartSubmissionView: View {
                 .foregroundColor(.clear)
             
             VStack(alignment: .center) {
-                HStack(alignment: .top) {
+                HStack {
                     Circle()
-                        .frame(width: 80, height: 80)
+                        .frame(width: 80)
                         .foregroundColor(.gray)
                         .overlay {
                             Image(systemName: "checkmark")
@@ -35,21 +38,23 @@ struct CartSubmissionView: View {
                         }
                 }
                 
-                Divider()
                 
                 Text("Your order has been submitted!")
+                    .font(.system(size: 18))
+                    .font(.subheadline)
+                    .multilineTextAlignment(.center)
                 
             }
         }
-        .frame(maxWidth: 150, maxHeight: 150)
+        .frame(maxWidth: 150, maxHeight: 150) // make the view to be a square
         .padding()
-        .onTapGesture {
-            showSubmissionView.toggle()
-        }
         .onAppear {
             withAnimation(.linear(duration: 0.5)) {
                 isAnimating.toggle()
             }
+        }
+        .onTapGesture {
+            showSubmission.toggle()
         }
         
     }
@@ -57,5 +62,5 @@ struct CartSubmissionView: View {
 
 
 #Preview {
-    CartSubmissionView(showSubmissionView: .constant(false))
+    CartSubmissionView(showSubmission: .constant(false))
 }

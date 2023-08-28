@@ -53,10 +53,15 @@ struct CartListView: View {
                 }
             }
             .listStyle(.insetGrouped)
-            .blur(radius: showSubmissionView ? 15 : 0)
+            .blur(radius: showSubmissionView ? 8 : 0)
             
             if showSubmissionView {
-                CartSubmissionView(showSubmissionView: $showSubmissionView)
+                CartSubmissionView(showSubmission: $showSubmissionView)
+            }
+        }
+        .onTapGesture { // dismiss the view after clicking on the outside
+            if showSubmissionView {
+                showSubmissionView.toggle()
             }
         }
         

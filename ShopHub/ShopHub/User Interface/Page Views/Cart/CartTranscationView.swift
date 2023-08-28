@@ -16,40 +16,49 @@ struct CartTranscationView: View {
         
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text("Subtotal:")
-                    .fontWeight(.light)
+                TranscationTextView(text: "Subtotal")
                     
                 Spacer()
                 
-                Text(10.00, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    .fontWeight(.bold)
+                TranscationTextView(bill: 10.00)
             }
             
             HStack {
-                Text("Delivery Fee:")
-                    .fontWeight(.light)
+                TranscationTextView(text: "Delivery fee:")
                 
                 Spacer()
                 
-                Text(10.00, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    .fontWeight(.bold)
+                TranscationTextView(bill: 10.00)
             }
             
             Divider()
             
             HStack {
-                Text("Total:")
-                    .fontWeight(.light)
+                TranscationTextView(text: "Total:")
                 
                 Spacer()
                 
-                Text(20.00, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                    .fontWeight(.bold)
+                TranscationTextView(bill: 20.00)
                     .font(.system(size: 20))
                     .foregroundStyle(Color.green)
             }
-            .padding(.bottom, 10)
+            .padding([.top, .bottom], 5)
             
+        }
+    }
+}
+
+struct TranscationTextView: View {
+    var text: String?
+    var bill: Double?
+    
+    var body: some View {
+        if let text {
+            Text(text)
+                .fontWeight(.light)
+        } else if let bill {
+            Text(bill, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                .fontWeight(.bold)
         }
     }
 }
