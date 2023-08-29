@@ -1,5 +1,5 @@
 //
-//  CartTranscationView.swift
+//  CartTransactionView.swift
 //  ShopHub
 //
 //  Created by Yongye Tan on 8/27/23.
@@ -7,38 +7,40 @@
 
 import SwiftUI
 
-struct CartTranscationView: View {
+struct CartTransactionView: View {
     
     // Environment object
     @EnvironmentObject var shoppingCart: CartViewModel
+    
+    private let deliveryFee: Double = 10.00
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                TranscationTextView(text: "Subtotal")
+                TransactionTextView(text: "Subtotal")
                     
                 Spacer()
                 
-                TranscationTextView(bill: 10.00)
+                TransactionTextView(bill: shoppingCart.calculateTotalPrice())
             }
             
             HStack {
-                TranscationTextView(text: "Delivery fee:")
+                TransactionTextView(text: "Delivery fee:")
                 
                 Spacer()
                 
-                TranscationTextView(bill: 10.00)
+                TransactionTextView(bill: deliveryFee)
             }
             
             Divider()
             
             HStack {
-                TranscationTextView(text: "Total:")
+                TransactionTextView(text: "Total:")
                 
                 Spacer()
                 
-                TranscationTextView(bill: 20.00)
+                TransactionTextView(bill: shoppingCart.calculateTotalPrice(with: deliveryFee))
                     .font(.system(size: 20))
                     .foregroundStyle(Color.green)
             }
@@ -48,7 +50,7 @@ struct CartTranscationView: View {
     }
 }
 
-struct TranscationTextView: View {
+struct TransactionTextView: View {
     var text: String?
     var bill: Double?
     
@@ -62,13 +64,13 @@ struct TranscationTextView: View {
         }
     }
 }
-
-#Preview {
-    Form {
-        Section {
-            CartTranscationView()
-        } header: {
-            Text("Transacation")
-        }
-    }
-}
+//
+//#Preview {
+//    Form {
+//        Section {
+//            CartTransactionView()
+//        } header: {
+//            Text("Transaction")
+//        }
+//    }
+//}

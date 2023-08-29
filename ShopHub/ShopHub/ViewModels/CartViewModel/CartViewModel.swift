@@ -50,7 +50,7 @@ extension CartViewModel {
         }
     }
     
-    // MARK: Get and manipulate the quantity of product
+    /// Get and manipulate the quantity of product
     func getQuantity(of product: Product) -> Int {
         products[product] ?? -1
     }
@@ -67,11 +67,19 @@ extension CartViewModel {
         }
     }
     
-    // MARK: Delete product from the local shopping cart
+    /// Delete product from the local shopping cart
     func delete(product: Product) {
         products.removeValue(forKey: product)
         print(products)
     }
-
+    
+    /// Calculate the total price of all the products in the cart
+    func calculateTotalPrice(with fee: Double = 0.0) -> Double {
+        var subtotal: Double = 0.0
+        for (product, quantity) in products {
+            subtotal += product.price * Double(quantity)
+        }
+        return subtotal + fee
+    }
 }
 

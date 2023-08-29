@@ -33,9 +33,9 @@ struct CartListView: View {
                     }
                 }
                 Section {
-                    CartTranscationView()
+                    CartTransactionView()
                 } header: {
-                    Text("Transacation")
+                    Text("Transaction")
                 }
                 
                 
