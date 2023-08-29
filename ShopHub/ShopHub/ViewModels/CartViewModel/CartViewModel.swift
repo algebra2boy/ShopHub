@@ -41,17 +41,23 @@ class CartViewModel: ObservableObject, Cartable {
 
 extension CartViewModel {
     
+    /// Calculate the total quantities of all the products in the cart
     var totalQuantities: Int {
         products.values.reduce(0, +)
     }
     
-    // MARK: Add product to local shopping cart
+    /// Add product to local shopping cart
     func add(product: Product, with count: Int) {
         if products.keys.contains(product) {
             products[product]! += count
         } else {
             products[product] = count
         }
+    }
+    
+    /// A Boolean value that indicates whether the shopping cart  is empty.
+    func isEmpty() -> Bool {
+        products.isEmpty
     }
     
     /// Get and manipulate the quantity of product

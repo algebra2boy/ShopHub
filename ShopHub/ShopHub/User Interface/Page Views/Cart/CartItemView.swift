@@ -48,6 +48,8 @@ struct CartItemView: View {
                         .foregroundColor(.accentColor)
                         .font(.system(size: 18))
                         .fontWeight(.heavy)
+                        .minimumScaleFactor(1)  // will scale down to at most half the original font size
+                        .lineLimit(1)  // ensure it remains on one line
                     
                     Spacer()
                     

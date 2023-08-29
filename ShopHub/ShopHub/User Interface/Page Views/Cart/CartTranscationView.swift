@@ -18,33 +18,38 @@ struct CartTransactionView: View {
     
     private var adjustedDeliveryFee: Double {
         // No fee when a user buys more than tow products
-        isEligibleForFreeDelivery ? 0.0 : 10.00
+        if shoppingCart.isEmpty() {
+            return 0.0
+        }
+        return isEligibleForFreeDelivery ? 0.0 : 10.00
     }
     
     
     var body: some View {
         
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                TransactionTextView(text: "Subtotal")
+            if !shoppingCart.isEmpty() {
+                HStack {
+                    TransactionTextView(text: "Subtotal")
                     
-                Spacer()
+                    Spacer()
+                    
+                    TransactionTextView(bill: shoppingCart.calculateTotalPrice())
+                }
                 
-                TransactionTextView(bill: shoppingCart.calculateTotalPrice())
+                HStack {
+                    TransactionTextView(text: "Delivery fee:")
+                    
+                    Spacer()
+                    
+                    TransactionTextView(bill: adjustedDeliveryFee)
+                        .foregroundStyle(isEligibleForFreeDelivery ? .gray : .black)
+                        .strikethrough(isEligibleForFreeDelivery, color: .gray)
+                    
+                }
+                
+                Divider()
             }
-            
-            HStack {
-                TransactionTextView(text: "Delivery fee:")
-                
-                Spacer()
-                
-                TransactionTextView(bill: adjustedDeliveryFee)
-                    .foregroundStyle(isEligibleForFreeDelivery ? .gray : .black)
-                    .strikethrough(isEligibleForFreeDelivery, color: .gray)
-
-            }
-            
-            Divider()
             
             HStack {
                 TransactionTextView(text: "Total:")
