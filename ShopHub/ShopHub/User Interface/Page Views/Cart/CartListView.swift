@@ -3,7 +3,8 @@
 //  ShopHub
 //
 //  Created by CHENGTAO on 8/20/23.
-//  Source: https://sarunw.com/posts/swiftui-list-section-header-footer/
+//  Source1: https://sarunw.com/posts/swiftui-list-section-header-footer/
+//  Source2: https://www.hackingwithswift.com/quick-start/swiftui/how-to-control-the-tappable-area-of-a-view-using-contentshape
 
 import SwiftUI
 
@@ -12,7 +13,7 @@ struct CartListView: View {
     @EnvironmentObject var cart: CartViewModel
     
     @State private var showSubmissionView: Bool = false
-        
+    
     var body: some View {
         ZStack {
             List {
@@ -53,14 +54,19 @@ struct CartListView: View {
             }
             .listStyle(.insetGrouped)
             .blur(radius: showSubmissionView ? 8 : 0)
-
+            
             if showSubmissionView {
+                
+                Color.clear
+                    // because swipe action is another gesture
+                    // swiftui is confused on which gesture should perform first
+                    // give this view for hit testing
+                    .contentShape(Rectangle())  // make entire view tappable
+                    .onTapGesture {
+                        showSubmissionView.toggle()
+                    }
+                
                 CartSubmissionView(showSubmission: $showSubmissionView)
-            }
-        }
-        .onTapGesture { // dismiss the view after clicking on the outside
-            if showSubmissionView {
-                showSubmissionView.toggle()
             }
         }
     }
