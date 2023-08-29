@@ -34,7 +34,7 @@ class CartViewModel: ObservableObject, Cartable {
     
     init() {
         let products: [Product] = Bundle.main.decode("ProductList.json")
-        self.products = [products[1]: 4]
+        self.products = [products[1]: 1]
     }
     
 }
@@ -83,11 +83,7 @@ extension CartViewModel {
         for (product, quantity) in products {
             subtotal += product.price * Double(quantity)
         }
-        
-        // No fee when a user buys more than three products
-        let finalFee = totalQuantities > 3 ? 0 : fee
-        
-        return subtotal + finalFee
+        return subtotal + fee
     }
 }
 

@@ -31,7 +31,7 @@ struct ProductView: View {
                     Text(product.name)
                         .font(.subheadline)
                         .fontWeight(.bold)
-                                        
+                    
                     Text(product.price, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                         .font(.subheadline)
                         .fontWeight(.semibold)

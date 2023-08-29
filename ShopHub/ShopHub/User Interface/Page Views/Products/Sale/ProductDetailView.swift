@@ -106,10 +106,10 @@ struct ProductDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-//
+
 //#Preview("Clothing") {
-////    let products: [Product] = Bundle.main.decode("ProductList.json")
-////    let product: Product = products[1]
-////    return ProductDetailView(product: product)
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[1]
+//    return ProductDetailView(product: product)
 //}
 

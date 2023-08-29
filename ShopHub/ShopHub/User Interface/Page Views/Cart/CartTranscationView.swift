@@ -12,12 +12,15 @@ struct CartTransactionView: View {
     // Environment object
     @EnvironmentObject var shoppingCart: CartViewModel
     
-    private var deliveryFee: Double {
-        let fee: Double = 10.00
-        // No fee when a user buys more than three products
-        let finalFee = shoppingCart.totalQuantities > 3 ? 0.0 : fee
-        return finalFee
+    private var isEligibleForFreeDelivery: Bool {
+        shoppingCart.totalQuantities > 2
     }
+    
+    private var adjustedDeliveryFee: Double {
+        // No fee when a user buys more than tow products
+        isEligibleForFreeDelivery ? 0.0 : 10.00
+    }
+    
     
     var body: some View {
         
@@ -35,7 +38,10 @@ struct CartTransactionView: View {
                 
                 Spacer()
                 
-                TransactionTextView(bill: deliveryFee)
+                TransactionTextView(bill: adjustedDeliveryFee)
+                    .foregroundStyle(isEligibleForFreeDelivery ? .gray : .black)
+                    .strikethrough(isEligibleForFreeDelivery, color: .gray)
+
             }
             
             Divider()
@@ -45,7 +51,7 @@ struct CartTransactionView: View {
                 
                 Spacer()
                 
-                TransactionTextView(bill: shoppingCart.calculateTotalPrice(with: deliveryFee))
+                TransactionTextView(bill: shoppingCart.calculateTotalPrice(with: adjustedDeliveryFee))
                     .font(.system(size: 20))
                     .foregroundStyle(Color.green)
             }
