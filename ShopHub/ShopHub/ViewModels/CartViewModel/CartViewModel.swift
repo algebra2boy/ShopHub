@@ -79,7 +79,12 @@ extension CartViewModel {
         for (product, quantity) in products {
             subtotal += product.price * Double(quantity)
         }
-        return subtotal + fee
+        
+        // No fee when a user buys more than three products
+        let totalUniqueProducts = products.keys.count
+        let finalFee = totalUniqueProducts > 3 ? 0.0 : fee
+        
+        return subtotal + finalFee
     }
 }
 
