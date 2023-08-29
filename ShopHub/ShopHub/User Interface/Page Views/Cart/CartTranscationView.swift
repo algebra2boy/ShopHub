@@ -12,7 +12,12 @@ struct CartTransactionView: View {
     // Environment object
     @EnvironmentObject var shoppingCart: CartViewModel
     
-    private let deliveryFee: Double = 10.00
+    private var deliveryFee: Double {
+        let fee: Double = 10.00
+        // No fee when a user buys more than three products
+        let finalFee = shoppingCart.totalQuantities > 3 ? 0.0 : fee
+        return finalFee
+    }
     
     var body: some View {
         

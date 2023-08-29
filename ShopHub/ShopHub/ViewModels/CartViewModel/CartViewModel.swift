@@ -41,6 +41,10 @@ class CartViewModel: ObservableObject, Cartable {
 
 extension CartViewModel {
     
+    var totalQuantities: Int {
+        products.values.reduce(0, +)
+    }
+    
     // MARK: Add product to local shopping cart
     func add(product: Product, with count: Int) {
         if products.keys.contains(product) {
@@ -76,9 +80,7 @@ extension CartViewModel {
     /// Calculate the total price of all the products in the cart
     func calculateTotalPrice(with fee: Double = 0.0) -> Double {
         var subtotal: Double = 0.0
-        var totalQuantities = 0
         for (product, quantity) in products {
-            totalQuantities += quantity
             subtotal += product.price * Double(quantity)
         }
         
