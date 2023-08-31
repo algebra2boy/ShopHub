@@ -22,7 +22,6 @@ struct CartItemView: View {
         let total = singlePrice * quantities
         return total
     }
-
     
     var body: some View {
         HStack(spacing: 20) {
@@ -44,11 +43,11 @@ struct CartItemView: View {
                     .truncationMode(.tail)
                 
                 HStack {
-                    Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                        .foregroundColor(.accentColor)
+                    Text(formattedPrice(price: totalPrice))
+                        .foregroundColor(.black)
                         .font(.system(size: 18))
                         .fontWeight(.heavy)
-                        .minimumScaleFactor(1)  // will scale down to at most half the original font size
+                        .minimumScaleFactor(formattedPrice(price: totalPrice).count > 5 ? 0.5 : 1)  // will scale down to at most half the original font size
                         .lineLimit(1)  // ensure it remains on one line
                     
                     Spacer()
@@ -63,6 +62,8 @@ struct CartItemView: View {
                         .disabled(shoppingCart.getQuantity(of: product) == 1)
                         
                         Text("\(shoppingCart.getQuantity(of: product))")
+                            .minimumScaleFactor(quantity > 9 ? 0.5 : 1)
+                            .lineLimit(1)
                         
                         Button {
                             shoppingCart.incrementQuantity(of: product)
@@ -75,6 +76,7 @@ struct CartItemView: View {
                     .buttonStyle(.borderless)
                                                 
                 }
+                .foregroundStyle(.black)
                 .padding()
             }
         }
@@ -92,9 +94,12 @@ struct CartItemView: View {
             .labelStyle(.titleAndIcon)
         }
         
-        
-        
     }
+    
+    func formattedPrice(price: Double) -> String {
+        price.formatted(.currency(code: Locale.current.currency?.identifier ?? "USD"))
+    }
+        
 }
 
 #Preview("Cart List View") {

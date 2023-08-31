@@ -40,12 +40,6 @@ class CartViewModel: ObservableObject, Cartable {
 }
 
 extension CartViewModel {
-    
-    /// Calculate the total quantities of all the products in the cart
-    var totalQuantities: Int {
-        products.values.reduce(0, +)
-    }
-    
     /// Add product to local shopping cart
     func add(product: Product, with count: Int) {
         if products.keys.contains(product) {
@@ -65,6 +59,19 @@ extension CartViewModel {
         products[product] ?? -1
     }
     
+    /// Delete product from the local shopping cart
+    func delete(product: Product) {
+        products.removeValue(forKey: product)
+    }
+}
+
+extension CartViewModel {
+    /// Calculate the total quantities of all the products in the cart
+    var totalQuantities: Int {
+        products.values.reduce(0, +)
+    }
+    
+
     func incrementQuantity(of product: Product) {
         if let currentQuantity = products[product], currentQuantity <= 999 {
             products[product]! += 1
@@ -75,12 +82,6 @@ extension CartViewModel {
         if let currentQuantity = products[product], currentQuantity > 0 {
             products[product]! -= 1
         }
-    }
-    
-    /// Delete product from the local shopping cart
-    func delete(product: Product) {
-        products.removeValue(forKey: product)
-        print(products)
     }
     
     /// Calculate the total price of all the products in the cart

@@ -13,11 +13,11 @@ struct CartTransactionView: View {
     @EnvironmentObject var shoppingCart: CartViewModel
     
     private var isEligibleForFreeDelivery: Bool {
+        // No fee when a user buys more than tow products
         shoppingCart.totalQuantities > 2
     }
     
     private var adjustedDeliveryFee: Double {
-        // No fee when a user buys more than tow products
         if shoppingCart.isEmpty() {
             return 0.0
         }
@@ -26,30 +26,27 @@ struct CartTransactionView: View {
     
     
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 10) {
-            if !shoppingCart.isEmpty() {
-                HStack {
-                    TransactionTextView(text: "Subtotal")
-                    
-                    Spacer()
-                    
-                    TransactionTextView(bill: shoppingCart.calculateTotalPrice())
-                }
+            HStack {
+                TransactionTextView(text: "Subtotal")
                 
-                HStack {
-                    TransactionTextView(text: "Delivery fee:")
-                    
-                    Spacer()
-                    
-                    TransactionTextView(bill: adjustedDeliveryFee)
-                        .foregroundStyle(isEligibleForFreeDelivery ? .gray : .black)
-                        .strikethrough(isEligibleForFreeDelivery, color: .gray)
-                    
-                }
+                Spacer()
                 
-                Divider()
+                TransactionTextView(bill: shoppingCart.calculateTotalPrice())
             }
+            
+            HStack {
+                TransactionTextView(text: "Delivery fee:")
+                
+                Spacer()
+                
+                TransactionTextView(bill: adjustedDeliveryFee)
+                    .foregroundStyle(isEligibleForFreeDelivery ? .gray : .black)
+                    .strikethrough(isEligibleForFreeDelivery, color: .gray)
+                
+            }
+            
+            Divider()
             
             HStack {
                 TransactionTextView(text: "Total:")
@@ -61,9 +58,9 @@ struct CartTransactionView: View {
                     .foregroundStyle(Color.green)
             }
             .padding([.top, .bottom], 5)
-            
         }
     }
+
 }
 
 struct TransactionTextView: View {
@@ -80,13 +77,11 @@ struct TransactionTextView: View {
         }
     }
 }
-//
-//#Preview {
-//    Form {
-//        Section {
-//            CartTransactionView()
-//        } header: {
-//            Text("Transaction")
-//        }
-//    }
-//}
+
+#Preview("Cart List View") {
+    CartListView()
+        .environmentObject(CartViewModel())
+}
+
+
+
