@@ -10,11 +10,9 @@ import SwiftUI
 struct ProductsView: View {
     
     // Environment
-    
     @EnvironmentObject var viewModel: ShopHubViewModel
     
     // Internal
-    
     @State private var isLogoPressed = false
     @State private var searchText = ""
     
@@ -24,10 +22,8 @@ struct ProductsView: View {
                 BannerView()
                 SalesView()
             }
-            .toolBarStyle(isLogoPressed: $isLogoPressed)
-            // search bar
+            .toolBarStyle(title: "ShopHub", titleImage: "basket.fill" , isLogoPressed: $isLogoPressed)
             .searchable(text: $searchText, prompt: "Search for products")
-            // use the view model to filter out product (separate the view logic)
             .onChange(of: searchText) {
                 viewModel.update(searchText: searchText)
             }

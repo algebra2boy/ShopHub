@@ -1,14 +1,14 @@
 //
-//  ToolBarStyle.swift
+//  SearchBar.swift
 //  ShopHub
 //
-//  Created by Yongye Tan on 8/12/23.
-//  Source: https://sarunw.com/posts/custom-navigation-bar-title-view-in-swiftui/
+//  Created by CHENGTAO on 8/19/23.
+//
 
 import SwiftUI
 
 /// a view modifier that is used for customize the top bar leading logo and brand name
-struct ToolBarStyleModifier: ViewModifier {
+struct SearchBarStyleModifier: ViewModifier {
     let title: String
     let titleImage: String
     @Binding var isLogoPressed: Bool
@@ -38,7 +38,7 @@ struct ToolBarStyleModifier: ViewModifier {
 
 extension View {
     @ViewBuilder
-    public func toolBarStyle(title: String, titleImage: String = "exclamationmark.circle.fill", isLogoPressed: Binding<Bool>) -> some View {
-        self.modifier(ToolBarStyleModifier(title: title, titleImage: titleImage, isLogoPressed: isLogoPressed))
+    public func searchBar(title: String, titleImage: String = "exclamationmark.circle.fill", isLogoPressed: Binding<Bool>) -> some View {
+        self.modifier(SearchBarStyleModifier(title: title, titleImage: titleImage, isLogoPressed: isLogoPressed))
     }
 }

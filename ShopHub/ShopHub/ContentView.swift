@@ -7,13 +7,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @StateObject var viewModel: ShopHubViewModel = ShopHubViewModel()
+    @StateObject var cartViewModel: CartViewModel = CartViewModel()
+    
     var body: some View {
         TabView {
             MenuTabView()
         }
-        .tabViewStyle(DefaultTabViewStyle())
         .environmentObject(viewModel)
+        .environmentObject(cartViewModel)
     }
 }
 

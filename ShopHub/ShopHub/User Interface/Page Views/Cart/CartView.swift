@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct CartView: View {
+    
+    // Internal State
+    @State private var searchText: String = ""
+    @State private var isLogoPressed = false
+
     var body: some View {
-        Text("Carts!")
+        NavigationStack {
+            VStack {
+                CartListView()
+            }
+            .toolBarStyle(title: "Shopping Cart", titleImage: "cart.fill", isLogoPressed: $isLogoPressed)
+            .searchable(text: $searchText, prompt: "Search for your product in cart")
+        }
     }
 }
 
-#Preview {
-    CartView()
-}
+//#Preview {
+//    CartView()
+//        .environmentObject(CartViewModel())
+//}
+

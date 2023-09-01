@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    // Parameter
+    // Parameters
     let product: Product
     
-    // Internal
+    // Internal State
     @State private var quantity = 1
     
+    @EnvironmentObject var shoppingCart: CartViewModel
+
     // Calculate total price base on products' quantity
-    var totalPrice: Double {
+    private var totalPrice: Double {
         let singlePrice = product.price
         let quantities = Double(quantity)
         let total = singlePrice * quantities
@@ -91,8 +93,7 @@ struct ProductDetailView: View {
                 .padding()
                 
                 Button {
-                    // MARK: ShoppingCartView
-                    // TODO: adding total amount of product to cart
+                    shoppingCart.add(product: product, with: quantity)
                 } label: {
                     Text("Add to cart")
                         .frame(maxWidth: .infinity)
@@ -106,9 +107,9 @@ struct ProductDetailView: View {
     }
 }
 
-#Preview("Clothing") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[1]
-    return ProductDetailView(product: product)
-}
+//#Preview("Clothing") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[1]
+//    return ProductDetailView(product: product)
+//}
 
