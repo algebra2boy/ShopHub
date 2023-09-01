@@ -76,8 +76,7 @@ struct CartItemView: View {
                     .buttonStyle(.borderless)
                                                 
                 }
-                .foregroundStyle(.black)
-                .padding()
+                .foregroundStyle(.blue)
             }
         }
         .padding([.leading, .trailing, .top], 10)
@@ -85,7 +84,6 @@ struct CartItemView: View {
         .cornerRadius(20)
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             Button(role: .destructive) {
-                // TODO: Delete item from the cart
                 shoppingCart.delete(product: product)
             } label: {
                 Label("delete", systemImage: "trash.fill")

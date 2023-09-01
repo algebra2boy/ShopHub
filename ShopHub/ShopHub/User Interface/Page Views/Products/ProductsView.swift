@@ -16,10 +16,6 @@ struct ProductsView: View {
     @State private var isLogoPressed = false
     @State private var searchText = ""
     
-    /// show the products  view when `Continue` is pressed.
-//    @Binding var showSubmission: Bool
-
-    
     var body: some View {
         NavigationStack {
             ScrollView {

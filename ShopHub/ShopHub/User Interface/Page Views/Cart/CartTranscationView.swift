@@ -13,15 +13,12 @@ struct CartTransactionView: View {
     @EnvironmentObject var shoppingCart: CartViewModel
     
     private var isEligibleForFreeDelivery: Bool {
-        // No fee when a user buys more than tow products
+        // No fee when a user buys more than two products
         shoppingCart.totalQuantities > 2
     }
     
     private var adjustedDeliveryFee: Double {
-        if shoppingCart.isEmpty() {
-            return 0.0
-        }
-        return isEligibleForFreeDelivery ? 0.0 : 10.00
+        isEligibleForFreeDelivery ? 0.0 : 10.00
     }
     
     

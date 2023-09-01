@@ -49,7 +49,7 @@ extension CartViewModel {
         }
     }
     
-    /// A Boolean value that indicates whether the shopping cart  is empty.
+    /// A `Boolean` value that indicates whether the shopping cart is empty.
     func isEmpty() -> Bool {
         products.isEmpty
     }
