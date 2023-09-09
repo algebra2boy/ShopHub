@@ -14,6 +14,7 @@ struct ProductDetailView: View {
     
     // Internal State
     @State private var quantity = 1
+    @FocusState var isQuantityFocused: Bool
     
     @EnvironmentObject var shoppingCart: CartViewModel
 
@@ -79,7 +80,12 @@ struct ProductDetailView: View {
                         }
                         .disabled(quantity == 1)
                         
-                        Text("\(quantity)")
+                        TextField("1", value: $quantity, format: .number)
+                            .focused($isQuantityFocused)
+                            .multilineTextAlignment(.center)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: 55)
+                            .keyboardType(.numberPad)
                         
                         Button {
                             quantity += 1
@@ -104,12 +110,24 @@ struct ProductDetailView: View {
         }
         .navigationTitle("Product Details")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            // add a submit button to disable the focus
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button {
+                    isQuantityFocused = false
+                } label: {
+                    Text("Submit").foregroundStyle(.blue)
+                }
+            }
+            
+        }
     }
 }
 
-//#Preview("Clothing") {
-//    let products: [Product] = Bundle.main.decode("ProductList.json")
-//    let product: Product = products[1]
-//    return ProductDetailView(product: product)
-//}
+#Preview("Clothing") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[1]
+    return ProductDetailView(product: product)
+}
 
