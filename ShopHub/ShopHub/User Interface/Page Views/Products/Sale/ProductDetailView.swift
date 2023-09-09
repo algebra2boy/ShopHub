@@ -85,7 +85,12 @@ struct ProductDetailView: View {
                             .multilineTextAlignment(.center)
                             .textFieldStyle(.roundedBorder)
                             .frame(width: 55)
-                            .keyboardType(.numberPad)
+                            .keyboardType(.numberPad) // super weird log: unable to simultaneously satisfy constraints, seems like a bug in swiftui, more to find: https://stackoverflow.com/questions/66082340/swiftui-unable-to-simultaneously-satisfy-constraints-when-focus-on-textfield-a
+                            .onChange(of: quantity) { oldValue, newValue in
+                                if quantity > 999 {
+                                    quantity = oldValue
+                                }
+                            } // onChange only accepts 2 parameter or 0, more to find: https://useyourloaf.com/blog/swiftui-onchange-deprecation/
                         
                         Button {
                             quantity += 1
