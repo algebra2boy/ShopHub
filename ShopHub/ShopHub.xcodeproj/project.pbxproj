@@ -32,6 +32,7 @@
 		AEB27CA72A87505B009E7A80 /* MenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA62A87505B009E7A80 /* MenuTabView.swift */; };
 		AEB27CAA2A8857E5009E7A80 /* ToolBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */; };
 		AEBD622F2A99A1E10014C335 /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBD622E2A99A1E10014C335 /* CartItemView.swift */; };
+		AEC27B292AACDCA000B22C40 /* TextFieldQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */; };
 		AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED85CD42A8B347B00E8B347 /* BannerView.swift */; };
 		AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		AEB27CA62A87505B009E7A80 /* MenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabView.swift; sourceTree = "<group>"; };
 		AEB27CA92A8857E5009E7A80 /* ToolBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarStyle.swift; sourceTree = "<group>"; };
 		AEBD622E2A99A1E10014C335 /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
+		AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldQuantityView.swift; sourceTree = "<group>"; };
 		AED85CD42A8B347B00E8B347 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHubViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +229,7 @@
 				AEB27CA82A885795009E7A80 /* ToolbarView */,
 				4237B37F2A8AC5AD00C214AE /* TypeTagView.swift */,
 				AE3600662A9C467700E70E53 /* CartSubmissionView.swift */,
+				AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */,
 			);
 			path = "Accessory Views";
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				4271EC902A88729C00E2C85B /* SalesView.swift in Sources */,
 				AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */,
 				AE3600672A9C467700E70E53 /* CartSubmissionView.swift in Sources */,
+				AEC27B292AACDCA000B22C40 /* TextFieldQuantityView.swift in Sources */,
 				4271EC8E2A8871EE00E2C85B /* Product.swift in Sources */,
 				4271EC922A88753900E2C85B /* ProductView.swift in Sources */,
 				AE2B3B792A871EAE00889805 /* ShopHubApp.swift in Sources */,
