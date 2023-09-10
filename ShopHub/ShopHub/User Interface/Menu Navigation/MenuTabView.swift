@@ -19,7 +19,9 @@ struct MenuTabView: View {
                 .tabItem {
                     tab.label
                 }
-                .badge(tab == .cart ? shoppingCart.totalQuantities : 0)
+                .badge(tab == .cart ?
+                       shoppingCart.totalQuantities < 99 ? String(shoppingCart.totalQuantities) : "99+"
+                       : nil)
         }
     }
 }
