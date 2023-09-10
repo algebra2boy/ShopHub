@@ -59,7 +59,7 @@ extension CartViewModel {
         products.isEmpty
     }
     
-    /// Get and manipulate the quantity of product
+    /// Get the quantity of the product
     func getQuantity(of product: Product) -> Int {
         products[product] ?? -1
     }
@@ -74,19 +74,6 @@ extension CartViewModel {
     /// Calculate the total quantities of all the products in the cart
     var totalQuantities: Int {
         products.values.reduce(0, +)
-    }
-    
-
-    func incrementQuantity(of product: Product) {
-        if let currentQuantity = products[product], currentQuantity <= 999 {
-            products[product]! += 1
-        }
-    }
-    
-    func decrementQuantity(of product: Product) {
-        if let currentQuantity = products[product], currentQuantity > 0 {
-            products[product]! -= 1
-        }
     }
     
     /// Calculate the total price of all the products in the cart

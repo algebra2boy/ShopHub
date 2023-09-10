@@ -61,27 +61,25 @@ struct CartItemView: View {
                     
                     HStack {
                         Button {
-                            shoppingCart.decrementQuantity(of: product)
+                            quantity -= 1
                         } label: {
                             Image(systemName: "minus.square")
                             
                         }
-                        .disabled(shoppingCart.getQuantity(of: product) == 1)
+                        .disabled(quantity == 1)
                         
                         TextFieldQuantityView(value: $quantity, focusState: _isQuantityFocused)
                         
                         Button {
-                            shoppingCart.incrementQuantity(of: product)
-                            
+                            quantity += 1
                         } label: {
                             Image(systemName: "plus.square")
                         }
-                        .disabled(shoppingCart.getQuantity(of: product) == 999)
+                        .disabled(quantity == 999)
                     }
                     .buttonStyle(.borderless)
                                                 
                 }
-                .foregroundStyle(.blue)
             }
         }
         .padding([.leading, .trailing, .top], 10)
