@@ -34,6 +34,7 @@
 		AEBD622F2A99A1E10014C335 /* CartItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBD622E2A99A1E10014C335 /* CartItemView.swift */; };
 		AEC27B292AACDCA000B22C40 /* TextFieldQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */; };
 		AED85CD52A8B347B00E8B347 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED85CD42A8B347B00E8B347 /* BannerView.swift */; };
+		AEE12AAE2AAE5199002FE29D /* AddToCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE12AAD2AAE5199002FE29D /* AddToCartView.swift */; };
 		AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AEBD622E2A99A1E10014C335 /* CartItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemView.swift; sourceTree = "<group>"; };
 		AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldQuantityView.swift; sourceTree = "<group>"; };
 		AED85CD42A8B347B00E8B347 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		AEE12AAD2AAE5199002FE29D /* AddToCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartView.swift; sourceTree = "<group>"; };
 		AEF37BC02A891F710003F44E /* ShopHubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHubViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -228,6 +230,7 @@
 			children = (
 				AEB27CA82A885795009E7A80 /* ToolbarView */,
 				4237B37F2A8AC5AD00C214AE /* TypeTagView.swift */,
+				AEE12AAD2AAE5199002FE29D /* AddToCartView.swift */,
 				AE3600662A9C467700E70E53 /* CartSubmissionView.swift */,
 				AEC27B282AACDCA000B22C40 /* TextFieldQuantityView.swift */,
 			);
@@ -353,6 +356,7 @@
 				42994BF12A9D4B39007248F0 /* MockCartView.swift in Sources */,
 				4271EC902A88729C00E2C85B /* SalesView.swift in Sources */,
 				AEF37BC12A891F710003F44E /* ShopHubViewModel.swift in Sources */,
+				AEE12AAE2AAE5199002FE29D /* AddToCartView.swift in Sources */,
 				AE3600672A9C467700E70E53 /* CartSubmissionView.swift in Sources */,
 				AEC27B292AACDCA000B22C40 /* TextFieldQuantityView.swift in Sources */,
 				4271EC8E2A8871EE00E2C85B /* Product.swift in Sources */,
@@ -504,7 +508,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopHub/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5H7526UKSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -534,7 +538,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopHub/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 5H7526UKSL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

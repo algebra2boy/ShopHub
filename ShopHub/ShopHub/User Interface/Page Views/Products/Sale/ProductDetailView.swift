@@ -14,6 +14,7 @@ struct ProductDetailView: View {
     
     // Internal State
     @State private var quantity = 1
+    @State private var isAddButtonPressed = false
     @FocusState var isQuantityFocused: Bool
     
     @EnvironmentObject var shoppingCart: CartViewModel
@@ -40,7 +41,7 @@ struct ProductDetailView: View {
                 
                 Divider()
                 
-                // MARK: name and type stack
+                // MARK: Name and type stack
                 HStack {
 
                     TypeTagView(productType: product.type, 
@@ -56,14 +57,14 @@ struct ProductDetailView: View {
                 }
                 .padding()
                 
-                // MARK: description
+                // MARK: Description
                 Text(product.description ?? "N/A")
                     .multilineTextAlignment(.leading)
                     .font(.body)
                     .fontWeight(.light)
                     .padding()
                 
-                // MARK: Price && quantity
+                // MARK: Price && Quantity
                 HStack {
                     
                     Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))

@@ -12,9 +12,16 @@ struct CartItemView: View {
     // Environment object
     @EnvironmentObject var shoppingCart: CartViewModel
     
-    // Parameters
-    let product: Product
-    let quantity: Int
+    // Internal State
+    @State private var product: Product
+    @State private var quantity: Int
+    @FocusState private var isQuantityFocused: Bool
+    
+    init(product: Product, quantity: Int) {
+        // becuase we passed product and quantity from the parent view as parameters, but we want to modify the internal state and update them as State, we have to set the initial value of these as the state parameters
+        self._product = State(initialValue: product)
+        self._quantity = State(initialValue: quantity)
+    }
     
     private var totalPrice: Double {
         let singlePrice = product.price
@@ -61,9 +68,7 @@ struct CartItemView: View {
                         }
                         .disabled(shoppingCart.getQuantity(of: product) == 1)
                         
-                        Text("\(shoppingCart.getQuantity(of: product))")
-                            .minimumScaleFactor(quantity > 9 ? 0.5 : 1)
-                            .lineLimit(1)
+                        TextFieldQuantityView(value: $quantity, focusState: _isQuantityFocused)
                         
                         Button {
                             shoppingCart.incrementQuantity(of: product)
@@ -82,6 +87,9 @@ struct CartItemView: View {
         .padding([.leading, .trailing, .top], 10)
         .background(Color(.systemBackground))
         .cornerRadius(20)
+        .onChange(of: quantity) {
+            shoppingCart.update(product: product, with: quantity)
+        }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             Button(role: .destructive) {
                 shoppingCart.delete(product: product)

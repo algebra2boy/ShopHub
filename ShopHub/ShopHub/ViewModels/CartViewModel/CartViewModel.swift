@@ -49,6 +49,11 @@ extension CartViewModel {
         }
     }
     
+    /// update the product quantity to local shopping cart
+    func update(product: Product, with count: Int) {
+        products[product] = count
+    }
+    
     /// A `Boolean` value that indicates whether the shopping cart is empty.
     func isEmpty() -> Bool {
         products.isEmpty
