@@ -60,6 +60,7 @@ struct CartListView: View {
                 }
                 .listStyle(.insetGrouped)
                 .blur(radius: showSubmissionView ? 8 : 0)
+                .disabled(showSubmissionView)
                 
                 
                 if showSubmissionView {
