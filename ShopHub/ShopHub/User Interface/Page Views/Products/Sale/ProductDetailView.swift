@@ -94,6 +94,7 @@ struct ProductDetailView: View {
                 .padding()
                 
                 Button {
+                    isAddButtonPressed.toggle()
                     shoppingCart.add(product: product, with: quantity)
                 } label: {
                     Text("Add to cart")
@@ -101,6 +102,7 @@ struct ProductDetailView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
+                .sensoryFeedback(.success, trigger: isAddButtonPressed) // add haptic effect when item adds to cart
             }
         }
         .navigationTitle("Product Details")
