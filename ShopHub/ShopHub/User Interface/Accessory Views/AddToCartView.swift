@@ -9,7 +9,21 @@ import SwiftUI
 
 struct AddToCartView: View {
     var body: some View {
-        Text("Hello, World!")
+        HStack {
+            Circle()
+                .stroke(.blue, lineWidth: 2.0)
+                .frame(width: 25)
+                .overlay {
+                    Image(systemName: "checkmark")
+                        .foregroundStyle(.green)
+                }
+            Text("Added to cart")
+                .foregroundStyle(.white)
+                .font(.headline)
+                .bold()
+        }
+        .frame(width: 150, height: 35)
+        .background(Color.gray)
     }
 }
 
