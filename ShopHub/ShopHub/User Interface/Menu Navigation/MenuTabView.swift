@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct MenuTabView: View {
+    
+    @EnvironmentObject var shoppingCart: CartViewModel
     @StateObject var menuViewModel: MenuTabViewModel = MenuTabViewModel()
     
     var body: some View {
@@ -17,6 +19,9 @@ struct MenuTabView: View {
                 .tabItem {
                     tab.label
                 }
+                .badge(tab == .cart ?
+                       shoppingCart.totalQuantities < 99 ? String(shoppingCart.totalQuantities) : "99+"
+                       : nil)
         }
     }
 }

@@ -31,6 +31,8 @@ struct CartListView: View {
                                              quantity: cart.products[product] ?? 0)
                                 
                             }
+                            .listRowInsets(.init(top: 5, leading: 10, bottom: 5, trailing: 10)) // add padding to each list item to make the view less tight
+    
                         } header: {
                             Text(cart.sectionHeader(type))
                                 .font(.subheadline)
@@ -58,6 +60,7 @@ struct CartListView: View {
                 }
                 .listStyle(.insetGrouped)
                 .blur(radius: showSubmissionView ? 8 : 0)
+                .disabled(showSubmissionView)
                 
                 
                 if showSubmissionView {

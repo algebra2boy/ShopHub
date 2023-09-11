@@ -49,12 +49,17 @@ extension CartViewModel {
         }
     }
     
+    /// update the product quantity to local shopping cart
+    func update(product: Product, with count: Int) {
+        products[product] = count
+    }
+    
     /// A `Boolean` value that indicates whether the shopping cart is empty.
     func isEmpty() -> Bool {
         products.isEmpty
     }
     
-    /// Get and manipulate the quantity of product
+    /// Get the quantity of the product
     func getQuantity(of product: Product) -> Int {
         products[product] ?? -1
     }
@@ -69,19 +74,6 @@ extension CartViewModel {
     /// Calculate the total quantities of all the products in the cart
     var totalQuantities: Int {
         products.values.reduce(0, +)
-    }
-    
-
-    func incrementQuantity(of product: Product) {
-        if let currentQuantity = products[product], currentQuantity <= 999 {
-            products[product]! += 1
-        }
-    }
-    
-    func decrementQuantity(of product: Product) {
-        if let currentQuantity = products[product], currentQuantity > 0 {
-            products[product]! -= 1
-        }
     }
     
     /// Calculate the total price of all the products in the cart

@@ -15,6 +15,13 @@ protocol Cartable {
     /// adds a specific product to the local shopping cart with quantity.
     func add(product: Product, with: Int)
     
-    // remove products from the local shopping cart.
-//    func remove
+    /// remove product from the local shopping cart.
+    func delete(product: Product)
+    
+    /// update the product quantity to local shopping cart.
+    func update(product: Product, with: Int)
+    
+    /// get the quantity of product
+    func getQuantity(of product: Product) -> Int
+    
 }
