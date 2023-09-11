@@ -102,16 +102,15 @@ struct ProductDetailView: View {
                         Text("Add to cart")
                             .frame(maxWidth: .infinity)
                     }
-                    .buttonStyle(.borderedProminent)
                     .padding()
+                    .buttonStyle(.borderedProminent)
                     .sensoryFeedback(.success, trigger: isAddButtonPressed) // add haptic effect when item adds to cart
                 }
-                .blur(radius: isAddButtonPressed ? 0.5 : 0)
+                .blur(radius: isAddButtonPressed ? 2 : 0)
                 .disabled(isAddButtonPressed)
                 
                 if isAddButtonPressed {
-                    Color.clear
-                    AddToCartView()
+                    AddToCartView(isAddToCartShown: $isAddButtonPressed)
                 }
             }
         }
@@ -124,7 +123,8 @@ struct ProductDetailView: View {
                 Button {
                     isQuantityFocused = false
                 } label: {
-                    Text("Submit").foregroundStyle(.blue)
+                    Text("Submit")
+                        .foregroundStyle(.blue)
                 }
             }
             
