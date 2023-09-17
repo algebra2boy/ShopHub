@@ -97,7 +97,11 @@ struct ProductDetailView: View {
                     
                     Button {
                         isAddButtonPressed.toggle()
-                        shoppingCart.add(product: product, with: quantity)
+                        
+                        // give a 2 second delay of adding an product to the cart
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            shoppingCart.add(product: product, with: quantity)
+                        }
                     } label: {
                         Text("Add to cart")
                             .frame(maxWidth: .infinity)
