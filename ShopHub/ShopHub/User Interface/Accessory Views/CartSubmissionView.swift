@@ -14,6 +14,10 @@ struct CartSubmissionView: View {
     
     // Internal State
     @State private var isAnimating: Bool = false
+    @State private var second: Int = 0 // keep track of how many seconds the view has been appeared
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     
     var body: some View {
         ZStack {
@@ -55,6 +59,13 @@ struct CartSubmissionView: View {
         }
         .onTapGesture {
             showSubmission.toggle()
+        }
+        .onReceive(timer) { _ in
+            if second == 2 {
+                showSubmission.toggle()
+                timer.upstream.connect().cancel()
+            }
+            second += 1
         }
         
     }
