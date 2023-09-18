@@ -120,6 +120,8 @@ struct ProductDetailView: View {
         }
         .navigationTitle("Product Details")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)  // hide the default < back button
+        .navigationCustomBarBackButton()
         .toolbar {
             // add a submit button to disable the focus
             ToolbarItemGroup(placement: .keyboard) {
