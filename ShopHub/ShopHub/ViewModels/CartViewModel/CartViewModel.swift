@@ -29,7 +29,7 @@ class CartViewModel: ObservableObject, Cartable {
     func sectionContent(_ type: String) -> [Product] {
         Array(products
             .filter { $0.key.type == type }
-            .keys)
+            .keys).sorted()
     }
     
     init() {

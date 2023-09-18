@@ -97,6 +97,13 @@ struct CartItemView: View {
             .tint(.red)
             .labelStyle(.titleAndIcon)
         }
+        // receive the newest update/ products from the publisher
+        // and update the the quantity accordingly
+        .onReceive(shoppingCart.$products) { updatedProducts in
+            if let updatedQuantity = updatedProducts[product] {
+                self.quantity = updatedQuantity
+            }
+        }
         
     }
     
