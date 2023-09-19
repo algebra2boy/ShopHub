@@ -24,9 +24,43 @@ struct ProductsView: View {
             }
             .toolBarStyle(title: "ShopHub", titleImage: "basket.fill" , isLogoPressed: $isLogoPressed)
             .searchable(text: $searchText, prompt: "Search for products")
+            .searchSuggestions(searchSuggestionListView)
             .onChange(of: searchText) {
                 viewModel.update(searchText: searchText)
             }
+        }
+    }
+    
+    
+    @ViewBuilder
+    func searchSuggestionListView() -> some View {
+        Section {
+            ForEach(viewModel.filteredProducts) { product in
+                searchSuggestionView(product: product)
+            }
+        } header: {
+            Text("Top Searches").bold()
+        }
+    }
+    
+    @ViewBuilder
+    func searchSuggestionView(product: Product) -> some View {
+        HStack {
+            Image(product.image)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
+            
+            VStack(alignment: .leading) {
+                Text(product.name)
+                
+                Text(product.description ?? "")
+                    .font(.footnote)
+                    .foregroundStyle(.gray)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+            }
+            .frame(height: 30)
         }
     }
 }
