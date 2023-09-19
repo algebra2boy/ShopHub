@@ -13,8 +13,8 @@ struct ProductsView: View {
     @EnvironmentObject var viewModel: ShopHubViewModel
     
     // Internal
-    @State private var isLogoPressed = false
-    @State private var searchText = ""
+    @State private var isLogoPressed: Bool = false
+    @State private var searchText: String = ""
     
     var body: some View {
         NavigationStack {
@@ -32,39 +32,35 @@ struct ProductsView: View {
     }
     
     
-    @ViewBuilder
-    func searchSuggestionListView() -> some View {
+    @ViewBuilder func searchSuggestionListView() -> some View {
         Section {
-            ForEach(viewModel.filteredProducts) { product in
-                NavigationLink {
-                    ProductDetailView(product: product)
-                } label: {
-                    searchSuggestionView(product: product)
-                }
-            }
+            ForEach(viewModel.filteredProducts, content: searchSuggestionView(product:))
         } header: {
             Text("Top Searches").bold()
         }
     }
     
-    @ViewBuilder
-    func searchSuggestionView(product: Product) -> some View {
-        HStack {
-            Image(product.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 30)
-            
-            VStack(alignment: .leading) {
-                Text(product.name)
+    @ViewBuilder func searchSuggestionView(product: Product) -> some View {
+        NavigationLink {
+            ProductDetailView(product: product)
+        } label: {
+            HStack {
+                Image(product.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30)
                 
-                Text(product.description ?? "")
-                    .font(.footnote)
-                    .foregroundStyle(.gray)
-                    .lineLimit(1)
-                    .truncationMode(.tail)
+                VStack(alignment: .leading) {
+                    Text(product.name)
+                    
+                    Text(product.description ?? "")
+                        .font(.footnote)
+                        .foregroundStyle(.gray)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                }
+                .frame(height: 30)
             }
-            .frame(height: 30)
         }
     }
 }
