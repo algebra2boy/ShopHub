@@ -39,8 +39,10 @@ extension Array where Element == Product {
     /// - Returns: An array of `Products` that satisfied teh searching citeria
     func filter(searchText: String) -> Self {
         filter {
-            searchText.isEmpty ? true : 
-            $0.name.contains(searchText) || $0.type.contains(searchText)
+            searchText.isEmpty 
+            ? false 
+            : $0.name.localizedCaseInsensitiveContains(searchText)
+            || $0.type.localizedCaseInsensitiveContains(searchText)
         }
     }
 }

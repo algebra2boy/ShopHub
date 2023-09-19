@@ -36,7 +36,11 @@ struct ProductsView: View {
     func searchSuggestionListView() -> some View {
         Section {
             ForEach(viewModel.filteredProducts) { product in
-                searchSuggestionView(product: product)
+                NavigationLink {
+                    ProductDetailView(product: product)
+                } label: {
+                    searchSuggestionView(product: product)
+                }
             }
         } header: {
             Text("Top Searches").bold()
