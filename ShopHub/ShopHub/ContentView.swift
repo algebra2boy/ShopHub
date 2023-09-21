@@ -11,12 +11,15 @@ struct ContentView: View {
     @StateObject var viewModel: ShopHubViewModel = ShopHubViewModel()
     @StateObject var cartViewModel: CartViewModel = CartViewModel()
     
+    @State var selectedTab: MenuTab = .products
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             MenuTabView()
         }
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
+        .environment(\.selectedMenuTab, $selectedTab)
     }
 }
 
