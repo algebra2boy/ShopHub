@@ -9,6 +9,9 @@ import SwiftUI
 
 struct LaunchScreenView: View {
     @State private var firstPhaseIsAnimating: Bool = false
+    @State private var secondPhaseIsAnimating: Bool = false
+
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
     
     private let timer = Timer.publish(every: 0.65, on: .main, in: .common).autoconnect()
     
@@ -18,10 +21,19 @@ struct LaunchScreenView: View {
             logo
         }
         .onReceive(timer) {input in
-            withAnimation(.spring()) {
-                firstPhaseIsAnimating.toggle()
+            switch launchScreenManager.state {
+            case .first:
+                withAnimation(.spring()) {
+                    firstPhaseIsAnimating.toggle()
+                }
+            case .second:
+                withAnimation(.easeInOut) {
+                    secondPhaseIsAnimating.toggle()
+                }
+            default: break
             }
         }
+        .opacity(secondPhaseIsAnimating ? 0 : 1)
     }
 }
 
@@ -34,9 +46,6 @@ private extension LaunchScreenView {
     var logo: some View {
         Image("logo")
             .scaleEffect(firstPhaseIsAnimating ? 0.6 : 1)
+            .scaleEffect(secondPhaseIsAnimating ? (UIApplication.shared.connectedScenes.first as! UIWindowScene).screen.nativeBounds.size.height / 4 : 1)
     }
-}
-
-#Preview {
-    LaunchScreenView()
 }

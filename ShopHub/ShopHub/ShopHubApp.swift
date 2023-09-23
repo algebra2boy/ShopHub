@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct ShopHubApp: App {
+    @StateObject var launchScreenManager: LaunchScreenManager = LaunchScreenManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+                if launchScreenManager.state != .completed {
+                    LaunchScreenView()
+                }
+            }
+            .environmentObject(launchScreenManager)
         }
     }
 }
