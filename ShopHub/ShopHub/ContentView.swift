@@ -12,13 +12,16 @@ struct ContentView: View {
     @StateObject var cartViewModel: CartViewModel = CartViewModel()
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
     
+    @State var selectedTab: MenuTab = .products
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             MenuTabView()
         }
         .onAppear(perform: dimissLaunchScreen)
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
+        .environment(\.selectedMenuTab, $selectedTab)
         
     }
                    
