@@ -15,17 +15,15 @@ struct ContentView: View {
     var body: some View {
         TabView {
             MenuTabView()
-                .onAppear {
-                    DispatchQueue
-                        .main
-                        .asyncAfter(deadline: .now() + 3) {
-                            launchScreenManager.dismiss()
-                        }
-                }
         }
+        .onAppear(perform: dimissLaunchScreen)
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
         
+    }
+                   
+    func dimissLaunchScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: launchScreenManager.dismiss)
     }
 }
 

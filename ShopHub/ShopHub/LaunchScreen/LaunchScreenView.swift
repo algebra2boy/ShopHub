@@ -20,7 +20,7 @@ struct LaunchScreenView: View {
             background
             logo
         }
-        .onReceive(timer) {input in
+        .onReceive(timer) { _ in
             switch launchScreenManager.state {
             case .first:
                 withAnimation(.spring()) {
