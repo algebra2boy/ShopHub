@@ -18,14 +18,14 @@ struct ContentView: View {
         TabView(selection: $selectedTab) {
             MenuTabView()
         }
-        .onAppear(perform: dimissLaunchScreen)
+        .onAppear(perform: dismissLaunchScreen)
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
         .environment(\.selectedMenuTab, $selectedTab)
         
     }
                    
-    func dimissLaunchScreen() {
+    func dismissLaunchScreen() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: launchScreenManager.dismiss)
     }
 }

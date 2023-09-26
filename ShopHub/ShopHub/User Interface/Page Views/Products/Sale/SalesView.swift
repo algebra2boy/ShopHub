@@ -26,7 +26,6 @@ struct SalesView: View {
                 Spacer()
             }
             .padding(-2)
-            
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.allProducts) { product in
                     NavigationLink {
@@ -40,7 +39,7 @@ struct SalesView: View {
     }
 }
 
-#Preview {
-    SalesView()
-        .environmentObject(ShopHubViewModel())
-}
+//#Preview {
+//    SalesView()
+//        .environmentObject(ShopHubViewModel())
+//}
