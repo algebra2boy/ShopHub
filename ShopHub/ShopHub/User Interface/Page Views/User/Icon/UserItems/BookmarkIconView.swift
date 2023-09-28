@@ -10,8 +10,9 @@ import SwiftUI
 struct BookmarkIconView: View {
     var body: some View {
         HStack {
-            IconView(iconImg: "star.fill")
-            Text("Bookmark").font(.title2)
+            IconView(iconSystemImage: "star.fill")
+            Text("Bookmark")
+                .font(.title2)
         }
     }
 }

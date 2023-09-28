@@ -14,11 +14,14 @@ struct DayNightToggleView: View {
 
     var body: some View {
         HStack {
-            IconView(iconImg: "moon.circle.fill", foregroundColor: .black)
+            DayNightToggleView()
             // TODO: Dark mode switch function
             Toggle("Dark Mode", isOn: $isDarkModeOn)
         }
     }
 }
 
+#Preview {
+    DayNightToggleView()
+}
 

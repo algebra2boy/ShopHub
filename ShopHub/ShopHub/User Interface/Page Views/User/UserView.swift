@@ -19,10 +19,13 @@ struct UserView: View {
         NavigationStack {
             Form {
                 HStack {
-                    Image(systemName: "person.circle").resizable()
-                        .frame(width: 50, height: 50).foregroundStyle(.blue)
-                    VStack {
-                        Text("User name").font(.title2)
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundStyle(.blue)
+                    VStack (alignment: .leading) {
+                        Text("User name")
+                            .font(.title2)
                         Text("other info about user")
                     }
                 }
@@ -37,7 +40,7 @@ struct UserView: View {
                 
             }
             .toolBarStyle(title: "Settings", titleImage: "gearshape.fill", isLogoPressed: $isLogoPressed)
-            .searchable(text: $searchText, prompt: "Search for your product in cart")
+            .searchable(text: $searchText, prompt: "Search")
         }
     }
 }

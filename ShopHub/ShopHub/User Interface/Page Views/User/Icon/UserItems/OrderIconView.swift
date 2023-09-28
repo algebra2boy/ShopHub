@@ -10,8 +10,9 @@ import SwiftUI
 struct OrderIconView: View {
     var body: some View {
         HStack {
-            IconView(iconImg: "box.truck.fill")
-            Text("Order").font(.title2)
+            IconView(iconSystemImage: "box.truck.fill")
+            Text("Order")
+                .font(.title2)
         }
     }
 }

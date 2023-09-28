@@ -25,7 +25,6 @@
 		428D1B9F2ABE53F900F65A65 /* LaunchScreenPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428D1B9E2ABE53F900F65A65 /* LaunchScreenPhase.swift */; };
 		42994BF12A9D4B39007248F0 /* MockCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42994BF02A9D4B39007248F0 /* MockCartView.swift */; };
 		42A3BCEF2AC2A4C3006E9DCA /* DayNightToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3BCEE2AC2A4C3006E9DCA /* DayNightToggleView.swift */; };
-		42A3BCF12AC2AD37006E9DCA /* SettingsDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3BCF02AC2AD37006E9DCA /* SettingsDestinationView.swift */; };
 		42A3BCF32AC2ADF4006E9DCA /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3BCF22AC2ADF4006E9DCA /* IconView.swift */; };
 		42A3BCF92AC350AA006E9DCA /* OrderIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3BCF82AC350AA006E9DCA /* OrderIconView.swift */; };
 		42A3BCFB2AC350C8006E9DCA /* WalletIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A3BCFA2AC350C8006E9DCA /* WalletIconView.swift */; };
@@ -42,6 +41,7 @@
 		AE7B9E292ABBC5C00083D0D3 /* SelectedTabEnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7B9E282ABBC5C00083D0D3 /* SelectedTabEnvironmentKey.swift */; };
 		AEA24E702AB6953C005E5FAA /* ShopHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA24E6F2AB6953C005E5FAA /* ShopHubTests.swift */; };
 		AEA24E7F2AB69823005E5FAA /* TabViewMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA24E7E2AB69823005E5FAA /* TabViewMenuNavigation.swift */; };
+		AEA29B492AC532230037E58E /* DayNightToggleIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA29B482AC532230037E58E /* DayNightToggleIconView.swift */; };
 		AEAC80172A9AFEDA0074F0CC /* Cartable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC80162A9AFEDA0074F0CC /* Cartable.swift */; };
 		AEAC801A2A9C1DBA0074F0CC /* CartTranscationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEAC80192A9C1DBA0074F0CC /* CartTranscationView.swift */; };
 		AEB27C9F2A874D74009E7A80 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB27C9E2A874D74009E7A80 /* ProductsView.swift */; };
@@ -86,7 +86,6 @@
 		428D1B9E2ABE53F900F65A65 /* LaunchScreenPhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenPhase.swift; sourceTree = "<group>"; };
 		42994BF02A9D4B39007248F0 /* MockCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCartView.swift; sourceTree = "<group>"; };
 		42A3BCEE2AC2A4C3006E9DCA /* DayNightToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayNightToggleView.swift; sourceTree = "<group>"; };
-		42A3BCF02AC2AD37006E9DCA /* SettingsDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDestinationView.swift; sourceTree = "<group>"; };
 		42A3BCF22AC2ADF4006E9DCA /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		42A3BCF82AC350AA006E9DCA /* OrderIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderIconView.swift; sourceTree = "<group>"; };
 		42A3BCFA2AC350C8006E9DCA /* WalletIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletIconView.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		AEA24E6D2AB6953C005E5FAA /* ShopHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA24E6F2AB6953C005E5FAA /* ShopHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHubTests.swift; sourceTree = "<group>"; };
 		AEA24E7E2AB69823005E5FAA /* TabViewMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewMenuNavigation.swift; sourceTree = "<group>"; };
+		AEA29B482AC532230037E58E /* DayNightToggleIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DayNightToggleIconView.swift; path = "ShopHub/User Interface/Accessory Views/ToolbarView/DayNightToggleIconView.swift"; sourceTree = SOURCE_ROOT; };
 		AEAC80162A9AFEDA0074F0CC /* Cartable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartable.swift; sourceTree = "<group>"; };
 		AEAC80192A9C1DBA0074F0CC /* CartTranscationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTranscationView.swift; sourceTree = "<group>"; };
 		AEB27C9E2A874D74009E7A80 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
@@ -141,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				42A3BCEE2AC2A4C3006E9DCA /* DayNightToggleView.swift */,
-				42A3BCF02AC2AD37006E9DCA /* SettingsDestinationView.swift */,
 			);
 			path = SettingsComponent;
 			sourceTree = "<group>";
@@ -215,6 +214,7 @@
 		42A3BCF72AC34E93006E9DCA /* SettingItems */ = {
 			isa = PBXGroup;
 			children = (
+				AEA29B482AC532230037E58E /* DayNightToggleIconView.swift */,
 			);
 			path = SettingItems;
 			sourceTree = "<group>";
@@ -519,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42F49D662A91CF12002C3C35 /* CartListView.swift in Sources */,
+				AEA29B492AC532230037E58E /* DayNightToggleIconView.swift in Sources */,
 				426048482AC0B1C400C54B0C /* WalletView.swift in Sources */,
 				AEAC801A2A9C1DBA0074F0CC /* CartTranscationView.swift in Sources */,
 				4237B37D2A8AC17900C214AE /* ProductDetailView.swift in Sources */,
@@ -545,7 +546,6 @@
 				4271EC882A8871BE00E2C85B /* Bundle+Decode.swift in Sources */,
 				4237B3802A8AC5AD00C214AE /* TypeTagView.swift in Sources */,
 				AEB27CA12A874D86009E7A80 /* CartView.swift in Sources */,
-				42A3BCF12AC2AD37006E9DCA /* SettingsDestinationView.swift in Sources */,
 				42A3BCF92AC350AA006E9DCA /* OrderIconView.swift in Sources */,
 				AEB27CA32A874D95009E7A80 /* UserView.swift in Sources */,
 				AEAC80172A9AFEDA0074F0CC /* Cartable.swift in Sources */,

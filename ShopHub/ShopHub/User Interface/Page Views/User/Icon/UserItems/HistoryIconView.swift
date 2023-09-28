@@ -10,8 +10,9 @@ import SwiftUI
 struct HistoryIconView: View {
     var body: some View {
         HStack {
-            IconView(iconImg: "book.fill")
-            Text("History").font(.title2)
+            IconView(iconSystemImage: "book.fill")
+            Text("History")
+                .font(.title2)
         }
     }
 }

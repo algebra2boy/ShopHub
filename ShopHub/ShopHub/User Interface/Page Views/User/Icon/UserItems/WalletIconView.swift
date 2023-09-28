@@ -10,8 +10,9 @@ import SwiftUI
 struct WalletIconView: View {
     var body: some View {
         HStack{
-            IconView(iconImg: "wallet.pass.fill")
-            Text("Wallet").font(.title2)
+            IconView(iconSystemImage: "wallet.pass.fill")
+            Text("Wallet")
+                .font(.title2)
         }
     }
 }

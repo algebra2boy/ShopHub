@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct UserComponentsView: View {
-    @StateObject var userComponentsViewModel: UserComponentsViewModel = UserComponentsViewModel()
+    @StateObject var viewModel: UserComponentsViewModel = UserComponentsViewModel()
     
     
     var body: some View {
-        List (userComponentsViewModel.pages) { page in
+        List (viewModel.pages) { page in
             NavigationLink {
                 page.destination
             } label: {
@@ -73,6 +73,6 @@ extension UserComponents {
 }
 
 #Preview {
-    UserComponentsView(userComponentsViewModel: UserComponentsViewModel())
+    UserComponentsView(viewModel: UserComponentsViewModel())
 }
 
