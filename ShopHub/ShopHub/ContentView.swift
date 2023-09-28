@@ -8,9 +8,20 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // State Object
+    
     @StateObject var viewModel: ShopHubViewModel = ShopHubViewModel()
     @StateObject var cartViewModel: CartViewModel = CartViewModel()
+    
+    // Environment Object
+    
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    
+    // App Storage
+    
+    @AppStorage("dark-mode") var isDarkModeOn: Bool = false
+    
+    // Internal State
     
     @State var selectedTab: MenuTab = .products
     
@@ -22,7 +33,7 @@ struct ContentView: View {
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
         .environment(\.selectedMenuTab, $selectedTab)
-        
+        .preferredColorScheme(isDarkModeOn ? .dark : .light)
     }
                    
     func dismissLaunchScreen() {

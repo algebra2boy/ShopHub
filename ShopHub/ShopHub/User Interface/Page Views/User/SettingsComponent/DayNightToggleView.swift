@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DayNightToggleView: View {
     
-    @State private var isDarkModeOn: Bool = false
+    @AppStorage("dark-mode") var isDarkModeOn: Bool = false
 
 
     var body: some View {
         HStack {
-            DayNightToggleView()
+            DayNightToggleIconView()
             // TODO: Dark mode switch function
             Toggle("Dark Mode", isOn: $isDarkModeOn)
         }

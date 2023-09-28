@@ -20,7 +20,7 @@ struct NavigationCustomBarBackButton: ViewModifier {
                         dismiss()
                     } label: {
                         Image(systemName: "arrow.left")
-                            .foregroundStyle(Color.black)
+                            .foregroundStyle(.primary)
                             .font(.title3)
                     }
                 }
