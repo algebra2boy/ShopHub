@@ -32,7 +32,7 @@ struct UserView: View {
                     DayNightToggleView()
                 }
                 
-                Section("User") {
+                Section {
                     UserComponentsView()
                 }
                 
