@@ -12,24 +12,15 @@ struct IconView: View {
     var systemName: String
     var foregroundColor: Color
     var backgroundColor: Color
-    var cornerRadius: CGFloat
-    var imageWidth: CGFloat
-    var imageHeight: CGFloat
     
     public init(iconLabel: String = "Shophub",
                 systemName: String = "apple.logo",
                 foregroundColor: Color = .white,
-                backgroundColor: Color = .blue,
-                cornerRadius: CGFloat = 4,
-                imageWidth: CGFloat = 20,
-                imageHeight: CGFloat = 20) {
+                backgroundColor: Color = .blue) {
         self.iconLabel = iconLabel
         self.systemName = systemName
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
-        self.cornerRadius = cornerRadius
-        self.imageWidth = imageWidth
-        self.imageHeight = imageHeight
     }
     
     var body: some View {
