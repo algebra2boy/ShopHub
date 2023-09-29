@@ -10,6 +10,7 @@ import SwiftUI
 struct UserView: View {
     
     // Internal State
+    
     @State private var searchText: String = ""
     @State private var isLogoPressed: Bool = false
     

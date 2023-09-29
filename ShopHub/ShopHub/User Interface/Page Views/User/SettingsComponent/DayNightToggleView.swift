@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DayNightToggleView: View {
     
-    // store user preference
+    // store user preference in the disk
     @AppStorage("dark-mode") var isDarkModeOn: Bool = false
 
 

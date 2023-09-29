@@ -10,6 +10,7 @@ import SwiftUI
 struct CartTransactionView: View {
     
     // Environment object
+    
     @EnvironmentObject var shoppingCart: CartViewModel
     
     private var isEligibleForFreeDelivery: Bool {

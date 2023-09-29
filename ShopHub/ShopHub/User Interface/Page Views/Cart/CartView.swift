@@ -10,6 +10,7 @@ import SwiftUI
 struct CartView: View {
     
     // Internal State
+    
     @State private var searchText: String = ""
     @State private var isLogoPressed: Bool = false
 

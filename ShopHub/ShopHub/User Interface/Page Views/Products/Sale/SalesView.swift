@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SalesView: View {
     
-    // Enviornment
+    // Enviornment Object
     @EnvironmentObject var viewModel: ShopHubViewModel
     
     let columns = [GridItem](repeating: GridItem(.flexible()), count: 2)

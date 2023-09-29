@@ -10,7 +10,11 @@ import SwiftUI
 
 struct CartListView: View {
     
+    // Environment Object
+    
     @EnvironmentObject var cart: CartViewModel
+    
+    // Internal State
     
     @State private var showSubmissionView: Bool = false
 

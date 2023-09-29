@@ -10,7 +10,7 @@ import SwiftUI
 struct WalletIconView: View {
     var body: some View {
         HStack{
-            IconView(iconLabel: "Wallet", systemName: "wallet.pass.fill")
+            IconView(iconLabel: "Wallet", systemName: "creditcard")
         }
     }
 }

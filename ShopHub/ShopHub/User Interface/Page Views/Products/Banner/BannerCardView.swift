@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct BannerCardView: View {
+    
     // Parameter
+    
     let product: Product
     
     var body: some View {

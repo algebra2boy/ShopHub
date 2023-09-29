@@ -11,7 +11,6 @@ import SwiftUI
 struct UserComponentsView: View {
     @StateObject var viewModel: UserComponentsViewModel = UserComponentsViewModel()
     
-    
     var body: some View {
         List (viewModel.pages) { page in
             NavigationLink {
