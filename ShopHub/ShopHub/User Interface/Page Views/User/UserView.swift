@@ -13,8 +13,6 @@ struct UserView: View {
     @State private var searchText: String = ""
     @State private var isLogoPressed: Bool = false
     
-    @State private var isDarkModeOn: Bool = false
-    
     var body: some View {
         NavigationStack {
             Form {

@@ -19,7 +19,7 @@ struct ContentView: View {
     
     // App Storage
     
-    @AppStorage("dark-mode") var isDarkModeOn: Bool = false
+    @AppStorage("dark-mode") private var isDarkModeOn: Bool = false
     
     // Internal State
     

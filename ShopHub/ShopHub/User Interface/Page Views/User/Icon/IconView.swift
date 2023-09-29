@@ -8,20 +8,23 @@
 import SwiftUI
 
 struct IconView: View {
-    var iconSystemImage: String
+    var iconLabel: String
+    var systemName: String
     var foregroundColor: Color
     var backgroundColor: Color
     var cornerRadius: CGFloat
     var imageWidth: CGFloat
     var imageHeight: CGFloat
     
-    public init(iconSystemImage: String = "apple.logo",
-                foregroundColor: Color = .blue,
-                backgroundColor: Color = .white,
+    public init(iconLabel: String = "Shophub",
+                systemName: String = "apple.logo",
+                foregroundColor: Color = .white,
+                backgroundColor: Color = .blue,
                 cornerRadius: CGFloat = 4,
                 imageWidth: CGFloat = 20,
                 imageHeight: CGFloat = 20) {
-        self.iconSystemImage = iconSystemImage
+        self.iconLabel = iconLabel
+        self.systemName = systemName
         self.foregroundColor = foregroundColor
         self.backgroundColor = backgroundColor
         self.cornerRadius = cornerRadius
@@ -30,16 +33,23 @@ struct IconView: View {
     }
     
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(backgroundColor)
-                .frame(width: imageWidth, height: imageHeight)
-            Image(systemName: iconSystemImage)
+        Label {
+            Text(iconLabel)
+        } icon: {
+            Image(systemName: systemName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 18, height: 18)
                 .foregroundStyle(foregroundColor)
+                .background(
+                    RoundedRectangle(cornerRadius: 5)
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(backgroundColor)
+                )
         }
     }
 }
 
 #Preview {
-    IconView()
+    UserView()
 }

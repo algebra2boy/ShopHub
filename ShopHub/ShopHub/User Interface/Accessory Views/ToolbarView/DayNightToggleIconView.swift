@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DayNightToggleIconView: View {
     var body: some View {
-        IconView(iconSystemImage: "moon.circle.fill", foregroundColor: .black)
+        IconView(iconLabel: "Dark Mode", systemName: "moon.circle.fill")
     }
 }
 
