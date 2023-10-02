@@ -122,6 +122,7 @@ struct ProductDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarBackButtonHidden(true)  // hide the default < back button
         .navigationCustomBarBackButton()
+        .navigationShareLinkButton(product: product)
         .toolbar {
             // add a submit button to disable the focus
             ToolbarItemGroup(placement: .keyboard) {
@@ -138,10 +139,10 @@ struct ProductDetailView: View {
     }
 }
 
-#Preview("Clothing") {
-    let products: [Product] = Bundle.main.decode("ProductList.json")
-    let product: Product = products[1]
-    return ProductDetailView(product: product)
-        .environmentObject(CartViewModel())
-}
+//#Preview("Clothing") {
+//    let products: [Product] = Bundle.main.decode("ProductList.json")
+//    let product: Product = products[1]
+//    return ProductDetailView(product: product)
+//        .environmentObject(CartViewModel())
+//}
 

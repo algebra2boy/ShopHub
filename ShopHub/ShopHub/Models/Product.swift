@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreTransferable
 
 // a model that defines the Sale Product
 struct Product: Codable, Identifiable, Hashable {
@@ -36,3 +37,9 @@ extension Product: Comparable {
     
 }
 
+// Make Product transferable for shareLine
+extension Product: Transferable {
+    static var transferRepresentation: some TransferRepresentation {
+            ProxyRepresentation(exporting: \.image)
+        }
+}
