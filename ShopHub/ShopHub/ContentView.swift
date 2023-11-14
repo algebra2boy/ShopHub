@@ -21,6 +21,7 @@ struct ContentView: View {
         .onAppear(perform: dimissLaunchScreen)
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
+        .environmentObject(Auth0Manager())
         .environment(\.selectedMenuTab, $selectedTab)
         
     }
