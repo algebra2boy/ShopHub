@@ -96,6 +96,7 @@ extension UserView {
                 switch result {
                 case .success:
                     self.auth0Manager.user = nil
+                    isLogoPressed.toggle()
                 case .failure(let error):
                     print("Failed with: \(error)")
                 }
