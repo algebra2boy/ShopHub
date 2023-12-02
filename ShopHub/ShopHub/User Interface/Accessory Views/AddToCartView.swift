@@ -44,5 +44,5 @@ struct AddToCartView: View {
     let products: [Product] = Bundle.main.decode("ProductList.json")
     let product: Product = products[1]
     return ProductDetailView(product: product)
-        .environment(CartViewModel())
+        .environmentObject(CartViewModel())
 }

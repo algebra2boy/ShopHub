@@ -9,10 +9,9 @@
 import SwiftUI
 import Foundation
 
-@Observable
-class CartViewModel: Cartable {
+class CartViewModel: ObservableObject, Cartable {
 
-    var products: [Product: Int] = [:]
+    @Published var products: [Product: Int] = [:]
     
     
     var sectionHeaders: [String] {

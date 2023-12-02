@@ -9,23 +9,19 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    // Environment
-    
-    @Environment(CartViewModel.self) private var shoppingCart
-    
     // Parameters
     
     let product: Product
     
     // Internal State
     
-    @State private var quantity: Int = 1
-    @State private var isAddButtonPressed: Bool = false
-    
-    // Focus State
-    
+    @State private var quantity = 1
+    @State private var isAddButtonPressed = false
     @FocusState var isQuantityFocused: Bool
     
+    // Environment object
+    
+    @EnvironmentObject var shoppingCart: CartViewModel
 
     // Calculate total price base on products' quantity
     private var totalPrice: Double {
@@ -150,6 +146,6 @@ struct ProductDetailView: View {
     let products: [Product] = Bundle.main.decode("ProductList.json")
     let product: Product = products[1]
     return ProductDetailView(product: product)
-        .environment(CartViewModel())
+        .environmentObject(CartViewModel())
 }
 

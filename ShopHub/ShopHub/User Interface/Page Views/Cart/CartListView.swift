@@ -10,9 +10,9 @@ import SwiftUI
 
 struct CartListView: View {
     
-    // Environment
+    // Environment Object
     
-    @Environment(CartViewModel.self) private var cart
+    @EnvironmentObject var cart: CartViewModel
     
     // Internal State
     
@@ -133,7 +133,7 @@ struct EmptyCartView: View {
 
 #Preview {
     CartListView()
-        .environment(CartViewModel())
+        .environmentObject(CartViewModel())
 }
 
 #Preview("Empty cart") {

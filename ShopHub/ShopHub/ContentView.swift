@@ -15,8 +15,7 @@ struct ContentView: View {
     // Internal State
     
     @State var viewModel: ShopHubViewModel = ShopHubViewModel()
-    @State var cartViewModel: CartViewModel = CartViewModel()
-    
+    @StateObject var cartViewModel: CartViewModel = CartViewModel()
     @State var selectedTab: MenuTab = .products
     
     // App Storage
@@ -29,7 +28,7 @@ struct ContentView: View {
         }
         .onAppear(perform: dismissLaunchScreen)
         .environment(viewModel)
-        .environment(cartViewModel)
+        .environmentObject(cartViewModel)
         .environment(\.selectedMenuTab, $selectedTab)
         .preferredColorScheme(isDarkModeOn ? .dark : .light)
     }
