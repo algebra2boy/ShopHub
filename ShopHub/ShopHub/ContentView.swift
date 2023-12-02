@@ -32,6 +32,7 @@ struct ContentView: View {
         .onAppear(perform: dismissLaunchScreen)
         .environmentObject(viewModel)
         .environmentObject(cartViewModel)
+        .environmentObject(Auth0Manager())
         .environment(\.selectedMenuTab, $selectedTab)
         .preferredColorScheme(isDarkModeOn ? .dark : .light)
     }
