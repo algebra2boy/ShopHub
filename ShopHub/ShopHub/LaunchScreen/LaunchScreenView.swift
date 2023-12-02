@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct LaunchScreenView: View {
-    @State private var firstPhaseIsAnimating: Bool = false
-    @State private var secondPhaseIsAnimating: Bool = false
+    
+    // Environment Object
 
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    
+    // Internal State
+    
+    @State private var firstPhaseIsAnimating: Bool = false
+    @State private var secondPhaseIsAnimating: Bool = false
     
     private let timer = Timer.publish(every: 0.65, on: .main, in: .common).autoconnect()
     

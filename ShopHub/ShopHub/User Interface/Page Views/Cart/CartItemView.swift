@@ -10,9 +10,11 @@ import SwiftUI
 struct CartItemView: View {
     
     // Environment object
+    
     @EnvironmentObject var shoppingCart: CartViewModel
     
     // Internal State
+    
     @State private var product: Product
     @State private var quantity: Int
     @FocusState private var isQuantityFocused: Bool

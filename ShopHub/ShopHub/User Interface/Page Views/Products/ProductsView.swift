@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ProductsView: View {
     
-    // Environment
+    // Environment Object
+    
     @EnvironmentObject var viewModel: ShopHubViewModel
     
-    // Internal
+    // Internal State
+    
     @State private var isLogoPressed: Bool = false
     @State private var searchText: String = ""
     

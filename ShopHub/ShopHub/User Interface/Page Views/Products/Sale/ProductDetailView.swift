@@ -10,12 +10,16 @@ import SwiftUI
 struct ProductDetailView: View {
     
     // Parameters
+    
     let product: Product
     
     // Internal State
+    
     @State private var quantity = 1
     @State private var isAddButtonPressed = false
     @FocusState var isQuantityFocused: Bool
+    
+    // Environment object
     
     @EnvironmentObject var shoppingCart: CartViewModel
 

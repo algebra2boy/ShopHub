@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SalesView: View {
     
-    // Enviornment
+    // Enviornment Object
     @EnvironmentObject var viewModel: ShopHubViewModel
     
     let columns = [GridItem](repeating: GridItem(.flexible()), count: 2)
@@ -26,7 +26,6 @@ struct SalesView: View {
                 Spacer()
             }
             .padding(-2)
-            
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(viewModel.allProducts) { product in
                     NavigationLink {
@@ -40,7 +39,7 @@ struct SalesView: View {
     }
 }
 
-#Preview {
-    SalesView()
-        .environmentObject(ShopHubViewModel())
-}
+//#Preview {
+//    SalesView()
+//        .environmentObject(ShopHubViewModel())
+//}

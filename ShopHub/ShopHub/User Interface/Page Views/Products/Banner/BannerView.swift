@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BannerView: View {
         
-    // Environment
+    // Environment Object
+    
     @EnvironmentObject var viewModel: ShopHubViewModel
 
     var body: some View {

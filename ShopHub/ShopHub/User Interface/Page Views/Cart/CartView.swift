@@ -10,8 +10,9 @@ import SwiftUI
 struct CartView: View {
     
     // Internal State
+    
     @State private var searchText: String = ""
-    @State private var isLogoPressed = false
+    @State private var isLogoPressed: Bool = false
 
     var body: some View {
         NavigationStack {
@@ -24,8 +25,8 @@ struct CartView: View {
     }
 }
 
-#Preview {
-    CartView()
-        .environmentObject(CartViewModel())
-}
+//#Preview {
+//    CartView()
+//        .environmentObject(CartViewModel())
+//}
 

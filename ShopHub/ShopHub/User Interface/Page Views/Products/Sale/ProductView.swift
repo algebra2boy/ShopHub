@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct ProductView: View {
+    
+    // Parameter
+    
     let product: Product
     
     var body: some View {
