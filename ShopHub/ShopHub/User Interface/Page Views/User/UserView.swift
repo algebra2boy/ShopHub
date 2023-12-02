@@ -12,11 +12,11 @@ struct UserView: View {
     
     // Internal State
     @State private var searchText: String = ""
-    @State private var isLogin: Bool = false
+    @State private var isLogoPressed: Bool = false
     
     // EnvironmentObjects
     @EnvironmentObject var auth0Manager: Auth0Manager
-    
+
     
     var body: some View {
         NavigationStack {
@@ -29,7 +29,7 @@ struct UserView: View {
                         clipShape: { Circle() }
                     )
                     VStack (alignment: .leading) {
-                        Text(auth0Manager.user?.name ?? "Sign In to Access Account")
+                        Text(auth0Manager.user?.name ?? "Sign In to AccessAccount")
                             .font(.title2)
                         Text(auth0Manager.user?.email ?? "Sign In to View Your Email")
                     }
@@ -55,13 +55,13 @@ struct UserView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        if isLogin {
+                        if isLogoPressed {
                             self.logout()
                         } else {
                             self.login()
                         }
                     } label: {
-                        Text(isLogin ? "Log out" : "Sign up")
+                        Text(isLogoPressed ? "Log out" : "Sign up")
                     }
                     .font(.system(size: 22))
                     .offset(CGSize(width: -6, height: 0))
@@ -73,7 +73,7 @@ struct UserView: View {
 }
 
 
-// Sign and Login function
+
 extension UserView {
     func login() {
         Auth0
@@ -82,7 +82,7 @@ extension UserView {
                 switch result {
                 case .success(let credentials):
                     self.auth0Manager.user = User(from: credentials.idToken)
-                    isLogin = true
+                    isLogoPressed.toggle()
                 case .failure(let error):
                     print("Failed with: \(error)")
                 }
@@ -96,11 +96,12 @@ extension UserView {
                 switch result {
                 case .success:
                     self.auth0Manager.user = nil
-                    isLogin = false
+                    isLogoPressed.toggle()
                 case .failure(let error):
                     print("Failed with: \(error)")
                 }
             }
+        
     }
 }
 
