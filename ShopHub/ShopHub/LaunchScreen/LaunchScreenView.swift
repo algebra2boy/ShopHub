@@ -7,11 +7,12 @@
 
 import SwiftUI
 
+/// This struct creates the initial lanuch screen view when user enters the app.
 struct LaunchScreenView: View {
     
-    // Environment Object
-
-    @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    // Environment
+    
+    @Environment(LaunchScreenManager.self) private var launchScreenManager
     
     // Internal State
     
@@ -21,7 +22,7 @@ struct LaunchScreenView: View {
     private let timer = Timer.publish(every: 0.65, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack{
+        ZStack {
             background
             logo
         }

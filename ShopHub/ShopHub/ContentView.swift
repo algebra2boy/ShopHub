@@ -13,9 +13,9 @@ struct ContentView: View {
     @StateObject var viewModel: ShopHubViewModel = ShopHubViewModel()
     @StateObject var cartViewModel: CartViewModel = CartViewModel()
     
-    // Environment Object
+    // Environment
     
-    @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    @Environment(LaunchScreenManager.self) private var launchScreenManager
     
     // App Storage
     
@@ -43,5 +43,5 @@ struct ContentView: View {
 
 #Preview("Content View") {
     ContentView()
-        .environmentObject(LaunchScreenManager())
+        .environment(LaunchScreenManager())
 }
