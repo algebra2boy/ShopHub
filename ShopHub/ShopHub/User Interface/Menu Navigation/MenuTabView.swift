@@ -10,7 +10,12 @@ import SwiftUI
 
 struct MenuTabView: View {
     
-    @EnvironmentObject var shoppingCart: CartViewModel
+    // Environment
+    
+    @Environment(CartViewModel.self) private var shoppingCart
+    
+    // Internal State
+    
     @StateObject var menuViewModel: MenuTabViewModel = MenuTabViewModel()
     
     var body: some View {

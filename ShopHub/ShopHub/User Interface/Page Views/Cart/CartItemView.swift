@@ -117,6 +117,6 @@ struct CartItemView: View {
 
 #Preview("Cart List View") {
     CartListView()
-        .environmentObject(CartViewModel())
+        .environment(CartViewModel())
 }
 

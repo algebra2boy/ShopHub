@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CartTransactionView: View {
     
-    // Environment object
+    // Environment
     
-    @EnvironmentObject var shoppingCart: CartViewModel
+    @Environment(CartViewModel.self) private var cart
     
     private var isEligibleForFreeDelivery: Bool {
         // No fee when a user buys more than two products
@@ -78,7 +78,7 @@ struct TransactionTextView: View {
 
 #Preview("Cart List View") {
     CartListView()
-        .environmentObject(CartViewModel())
+        .environment(CartViewModel())
 }
 
 

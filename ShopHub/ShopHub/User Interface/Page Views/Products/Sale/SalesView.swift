@@ -14,6 +14,8 @@ struct SalesView: View {
     
     @Environment(ShopHubViewModel.self) private var viewModel
     
+    // Parameters
+    
     let columns = [GridItem](repeating: GridItem(.flexible()), count: 2)
     
     
