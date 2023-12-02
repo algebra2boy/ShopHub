@@ -8,22 +8,36 @@
 import Foundation
 import SwiftUI
 
-// a model that defines the Sale Product
-struct Product: Codable, Identifiable, Hashable {
+/// a model that defines the Sale Product.
+public struct Product: Codable, Identifiable, Hashable {
     
     // database required properties
-    var id: Int
-    var name: String
-    var price: Double
-    var type: String
-    var description: String?
-    var image: String
+    public var id: Int
+    
+    public var name: String
+    
+    public var price: Double
+    
+    public var type: String
+    
+    public var description: String?
+    
+    public var image: String
+    
+    public init(id: Int, name: String, price: Double, type: String, description: String? = nil, image: String) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.type = type
+        self.description = description
+        self.image = image
+    }
     
 }
 
 extension Product: Comparable {
     /// Conformation to `Comparable` protocol to allow for `sorted()` operations.
-    static func <(lhs: Product, rhs: Product) -> Bool {
+    public static func <(lhs: Product, rhs: Product) -> Bool {
         if lhs.name != rhs.name {
             return lhs.name < rhs.name
         } else if lhs.price != rhs.price {

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct BannerView: View {
         
-    // Environment Object
+    // Environment
     
-    @EnvironmentObject var viewModel: ShopHubViewModel
+    @Environment(ShopHubViewModel.self) private var viewModel
 
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(viewModel.allProducts) { product in
                     BannerCardView(product: product)
@@ -22,7 +22,7 @@ struct BannerView: View {
             }
             .scrollTargetLayout(isEnabled: true)
         }
-        .scrollTargetBehavior(.viewAligned(limitBehavior: .automatic))
+        .scrollIndicators(.hidden)
         .frame(height: 200)
         // TODO: (Optional) add Animation
     }
@@ -30,5 +30,5 @@ struct BannerView: View {
 
 #Preview {
     BannerView()
-        .environmentObject(ShopHubViewModel())
+        .environment(ShopHubViewModel())
 }
