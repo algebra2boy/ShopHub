@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
-import Auth0
 
 struct UserView: View {
     
     // Internal State
+    
     @State private var searchText: String = ""
     @State private var isLogin: Bool = false
     
@@ -22,16 +22,14 @@ struct UserView: View {
         NavigationStack {
             Form {
                 HStack {
-                    CustomAsyncImage(
-                        imageUrl: auth0Manager.user?.picture,
-                        width: 50,
-                        height: 50,
-                        clipShape: { Circle() }
-                    )
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundStyle(.blue)
                     VStack (alignment: .leading) {
                         Text(auth0Manager.user?.name ?? "Sign In to Access Account")
                             .font(.title2)
-                        Text(auth0Manager.user?.email ?? "Sign In to View Your Email")
+                        Text("other info about user")
                     }
                 }
                 
