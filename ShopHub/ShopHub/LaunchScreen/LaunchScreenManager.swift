@@ -1,5 +1,5 @@
 //
-//  LaunchScreenPhase.swift
+//  LaunchScreenManager.swift
 //  ShopHub
 //
 //  Created by CHENGTAO on 9/22/23.
@@ -13,8 +13,12 @@ enum LaunchScreenPhase {
     case completed
 }
 
-final class LaunchScreenManager: ObservableObject {
-    @Published private(set) var state: LaunchScreenPhase = .first
+/// This `Observable` class is the view model that manages the life cycle of launch screen.
+@Observable
+final class LaunchScreenManager {
+    
+    private(set) var state: LaunchScreenPhase = .first
+    
     func dismiss() {
         self.state = .second
         

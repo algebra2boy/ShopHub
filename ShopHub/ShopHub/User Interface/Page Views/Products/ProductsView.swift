@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProductsView: View {
     
-    // Environment Object
+    // Environment
     
-    @EnvironmentObject var viewModel: ShopHubViewModel
+    @Environment(ShopHubViewModel.self) private var viewModel
     
     // Internal State
     
@@ -70,7 +70,7 @@ struct ProductsView: View {
 #Preview {
     TabView {
         ProductsView()
-            .environmentObject(ShopHubViewModel())
+            .environment(ShopHubViewModel())
             .tabItem {
                 Label("Product", systemImage: "bag")
             }

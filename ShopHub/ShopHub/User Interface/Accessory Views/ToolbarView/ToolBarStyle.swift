@@ -9,6 +9,9 @@ import SwiftUI
 
 /// a view modifier that is used for customize the top bar leading logo and brand name
 struct ToolBarStyleModifier: ViewModifier {
+    
+    // Parameters
+    
     let title: String
     let titleImage: String
     @Binding var isLogoPressed: Bool

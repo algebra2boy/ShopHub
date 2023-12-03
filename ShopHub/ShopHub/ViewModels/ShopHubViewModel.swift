@@ -7,12 +7,14 @@
 
 import Foundation
 
-class ShopHubViewModel: ObservableObject {
+@Observable
+class ShopHubViewModel {
+    
     /// public storage to store all the products with only read access
     public private(set) var allProducts: [Product]
     
     /// filtered products to be shown to the users. Filtered based on the search text.
-    @Published var filteredProducts: [Product]
+    var filteredProducts: [Product]!
     
     /// the search text to filter out the products
     var searchText = ""

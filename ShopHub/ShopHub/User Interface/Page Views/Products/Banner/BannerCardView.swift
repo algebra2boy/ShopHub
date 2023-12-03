@@ -38,5 +38,5 @@ struct BannerCardView: View {
 
 #Preview("cardview") {
     BannerView()
-        .environmentObject(ShopHubViewModel())
+        .environment(ShopHubViewModel())
 }

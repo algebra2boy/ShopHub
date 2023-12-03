@@ -9,20 +9,27 @@ import SwiftUI
 
 struct AddToCartView: View {
     
+    // Parameter
+    
     @Binding var isAddToCartShown: Bool
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    // Internal State
+    
     @State private var second: Int = 0 // keep track of how many seconds the view has been appeared
 
     var body: some View {
         HStack {
+            
             Circle()
-                .stroke(.blue, lineWidth: 2.0)
+                .stroke(.blue, lineWidth: 3.0)
                 .frame(width: 25)
                 .overlay {
                     Image(systemName: "checkmark")
                         .foregroundStyle(.green)
                 }
+            
             Text("Added to cart")
                 .foregroundStyle(.white)
                 .font(.headline)

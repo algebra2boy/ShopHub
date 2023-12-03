@@ -22,7 +22,7 @@ struct ProductDetailView: View {
     // Environment object
     
     @EnvironmentObject var shoppingCart: CartViewModel
-
+    
     // Calculate total price base on products' quantity
     private var totalPrice: Double {
         let singlePrice = product.price
@@ -33,89 +33,9 @@ struct ProductDetailView: View {
     
     var body: some View {
         NavigationStack {
+            
             ZStack {
-                VStack {
-                    // MARK: Top image
-                    ZStack {
-                        Image("\(product.image)")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200, height: 200)
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
-                    
-                    Divider()
-                    
-                    // MARK: Name and type stack
-                    HStack {
-                        
-                        TypeTagView(productType: product.type,
-                                    backgroundColor: .red,
-                                    fontSize: 12)
-                        
-                        Spacer()
-                        
-                        Text(product.name)
-                            .fontWeight(.bold)
-                            .font(.system(size: 20))
-                        
-                    }
-                    .padding()
-                    
-                    // MARK: Description
-                    Text(product.description ?? "N/A")
-                        .multilineTextAlignment(.leading)
-                        .font(.body)
-                        .fontWeight(.light)
-                        .padding()
-                    
-                    // MARK: Price && Quantity
-                    HStack {
-                        
-                        Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
-                            .font(.system(size: 20))
-                            .fontWeight(.heavy)
-                        
-                        Spacer()
-                        
-                        HStack {
-                            Button {
-                                quantity -= 1
-                            } label: {
-                                Image(systemName: "minus.square")
-                            }
-                            .disabled(quantity == 1)
-                            
-                            TextFieldQuantityView(value: $quantity, focusState: _isQuantityFocused)
-                            
-                            Button {
-                                quantity += 1
-                            } label: {
-                                Image(systemName: "plus.square")
-                            }
-                        }
-                        .font(.system(size: 20))
-                        .fontWeight(.medium)
-                    }
-                    .padding()
-                    
-                    Button {
-                        isAddButtonPressed.toggle()
-                        
-                        // give a 2 second delay of adding an product to the cart
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            shoppingCart.add(product: product, with: quantity)
-                        }
-                    } label: {
-                        Text("Add to cart")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .padding()
-                    .buttonStyle(.borderedProminent)
-                    .sensoryFeedback(.success, trigger: isAddButtonPressed) // add haptic effect when item adds to cart
-                }
-                .blur(radius: isAddButtonPressed ? 2 : 0)
-                .disabled(isAddButtonPressed)
+                productDetailView
                 
                 if isAddButtonPressed {
                     AddToCartView(isAddToCartShown: $isAddButtonPressed)
@@ -139,6 +59,105 @@ struct ProductDetailView: View {
             }
             
         }
+    }
+    
+    var productDetailView: some View {
+        VStack {
+            
+            // MARK: Top image
+            
+            Image("\(product.image)")
+                .resizable(resizingMode: .stretch)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            
+            Divider()
+            
+            // MARK: Name and type stack
+            tagAndNameView
+            
+            // MARK: Description
+            Text(product.description ?? "N/A")
+                .multilineTextAlignment(.leading)
+                .font(.body)
+                .fontWeight(.light)
+                .padding()
+            
+            // MARK: Price && Quantity
+            priceAndQuantityView
+            
+            Button {
+                isAddButtonPressed.toggle()
+                
+                // give a 2 second delay of adding an product to the cart
+                
+                Task { @MainActor in
+                    try await Task.sleep(nanoseconds: 2_000_000_000)
+                    shoppingCart.add(product: product, with: quantity)
+                }
+                
+            } label: {
+                Text("Add to cart")
+                    .frame(maxWidth: .infinity)
+            }
+            .padding()
+            
+            .buttonStyle(.borderedProminent)
+            
+            // add haptic effect when item adds to cart
+            .sensoryFeedback(.success, trigger: isAddButtonPressed)
+        }
+        .blur(radius: isAddButtonPressed ? 2 : 0)
+        .disabled(isAddButtonPressed)
+    }
+    
+    private var tagAndNameView: some View {
+        HStack {
+            
+            TypeTagView(productType: product.type,
+                        backgroundColor: .red,
+                        fontSize: 12)
+            
+            Spacer()
+            
+            Text(product.name)
+                .fontWeight(.bold)
+                .font(.system(size: 20))
+            
+        }
+        .padding()
+    }
+    
+    private var priceAndQuantityView: some View {
+        HStack {
+            
+            Text(totalPrice, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                .font(.system(size: 20))
+                .fontWeight(.heavy)
+            
+            Spacer()
+            
+            HStack {
+                Button {
+                    quantity -= 1
+                } label: {
+                    Image(systemName: "minus.square")
+                }
+                .disabled(quantity == 1)
+                
+                TextFieldQuantityView(value: $quantity, focusState: _isQuantityFocused)
+                
+                Button {
+                    quantity += 1
+                } label: {
+                    Image(systemName: "plus.square")
+                }
+            }
+            .font(.system(size: 20))
+            .fontWeight(.medium)
+        }
+        .padding()
     }
 }
 

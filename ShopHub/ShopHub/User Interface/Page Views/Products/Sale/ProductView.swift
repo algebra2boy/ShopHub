@@ -15,7 +15,9 @@ struct ProductView: View {
     let product: Product
     
     var body: some View {
+        
         VStack(alignment: .center){
+            
             // put the type to the top right
             ZStack(alignment: .topTrailing) {
                 Image(product.image)
@@ -59,11 +61,11 @@ struct ProductView: View {
     }
 }
 
-//#Preview("SteamDeck") {
-//    let products: [Product] = Bundle.main.decode("ProductList.json")
-//    let product: Product = products[0]
-//    return ProductView(product: product)
-//}
+#Preview("SteamDeck") {
+    let products: [Product] = Bundle.main.decode("ProductList.json")
+    let product: Product = products[0]
+    return ProductView(product: product)
+}
 //
 //#Preview("Clothing") {
 //    let products: [Product] = Bundle.main.decode("ProductList.json")
