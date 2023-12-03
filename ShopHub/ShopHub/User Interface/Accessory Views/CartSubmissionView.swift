@@ -9,10 +9,12 @@ import SwiftUI
 
 struct CartSubmissionView: View {
     
+    // Parameter
     /// show the submission view when `Continue` is pressed.
     @Binding var showSubmission: Bool
     
     // Internal State
+    
     @State private var isAnimating: Bool = false
     @State private var second: Int = 0 // keep track of how many seconds the view has been appeared
     

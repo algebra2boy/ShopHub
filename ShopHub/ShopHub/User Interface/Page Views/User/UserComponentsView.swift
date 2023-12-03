@@ -9,7 +9,10 @@ import Foundation
 import SwiftUI
 
 struct UserComponentsView: View {
-    @StateObject var viewModel: UserComponentsViewModel = UserComponentsViewModel()
+    
+    // Internal State
+    
+    @State var viewModel: UserComponentsViewModel = UserComponentsViewModel()
     
     var body: some View {
         List (viewModel.pages) { page in
@@ -25,8 +28,8 @@ struct UserComponentsView: View {
 
 
 /// a view model that stores the information about the UserComponents tabs
-final class UserComponentsViewModel: ObservableObject {
-    @Published var pages: [UserComponents] = UserComponents.allCases
+@Observable final class UserComponentsViewModel {
+    var pages: [UserComponents] = UserComponents.allCases
 }
 
 /// A enum that represents the user component  of the screen

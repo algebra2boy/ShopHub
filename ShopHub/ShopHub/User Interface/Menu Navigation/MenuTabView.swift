@@ -11,7 +11,10 @@ import SwiftUI
 struct MenuTabView: View {
     
     @EnvironmentObject var shoppingCart: CartViewModel
-    @StateObject var menuViewModel: MenuTabViewModel = MenuTabViewModel()
+    
+    // Internal State
+    
+    @State var menuViewModel: MenuTabViewModel = MenuTabViewModel()
     
     var body: some View {
         ForEach(menuViewModel.tabs) { tab in
@@ -27,8 +30,8 @@ struct MenuTabView: View {
 }
 
 /// a view model that stores the information about the menu tabs
-final class MenuTabViewModel: ObservableObject {
-    @Published var tabs: [MenuTab] = MenuTab.allCases
+@Observable final class MenuTabViewModel {
+    var tabs: [MenuTab] = MenuTab.allCases
 }
 
 /// A enum that represents the menu tab at the bottom of the screen
